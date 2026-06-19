@@ -1,119 +1,111 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star } from 'lucide-react'
 import { staggerContainer, fadeInUp, viewportOnce } from '@/animations'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { testimonials } from '@/lib/data/testimonials'
 
 export function Testimonials() {
   return (
-    <section className="py-28 relative overflow-hidden" style={{ background: 'var(--bg-0)' }}>
+    <section className="py-24 lg:py-32 relative overflow-hidden" style={{ background: 'var(--bg-0)' }}>
+      {/* Ghost overlay text */}
+      <div className="absolute inset-0 flex items-center justify-end overflow-hidden pointer-events-none select-none" aria-hidden>
+        <span
+          className="font-black uppercase leading-none"
+          style={{
+            fontSize: 'clamp(8rem, 22vw, 26rem)',
+            letterSpacing: '-0.06em',
+            color: 'rgba(255,255,255,0.022)',
+            marginRight: '-2vw',
+          }}
+        >
+          Avis
+        </span>
+      </div>
+
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
-          <motion.div variants={fadeInUp}><SectionLabel>Témoignages</SectionLabel></motion.div>
-          <motion.h2 variants={fadeInUp} className="text-[clamp(2rem,4vw,3rem)] font-extrabold tracking-[-0.04em] leading-tight mb-5" style={{ color: 'var(--text)', textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
-            Ce que nos clients <em className="not-italic text-gradient">disent de nous</em>
-          </motion.h2>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row gap-14 lg:gap-20">
 
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5"
-        >
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.id}
+          {/* LEFT: sticky heading */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            className="lg:w-[36%] lg:sticky lg:top-24 lg:self-start"
+          >
+            <motion.div variants={fadeInUp}><SectionLabel>Témoignages</SectionLabel></motion.div>
+            <motion.h2
               variants={fadeInUp}
-              transition={{ delay: i * 0.1 }}
-              style={{ perspective: '800px' }}
+              className="font-extrabold tracking-[-0.04em] leading-tight mt-4 mb-6"
+              style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: 'var(--text)' }}
             >
-              <motion.div
-                whileHover={{ rotateY: -2, rotateX: 1, scale: 1.015 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-                style={{ transformStyle: 'preserve-3d' }}
-              >
-                <div className="card rounded-2xl p-7 h-full relative overflow-hidden">
-                  {/* Barre colorée haute */}
-                  <div
-                    className="absolute top-0 left-0 right-0 h-px"
-                    style={{ background: `linear-gradient(90deg, transparent, ${t.color}70, transparent)` }}
-                  />
-
-                  {/* Guillemets sculptés */}
-                  <div
-                    className="text-5xl font-serif leading-none mb-4 select-none"
-                    style={{
-                      color: 'rgba(240,240,244,0.04)',
-                      textShadow: '0 2px 0 rgba(255,255,255,0.03)',
-                    }}
-                  >&ldquo;</div>
-
-                  {/* Étoiles */}
-                  <div className="flex items-center gap-1 mb-4">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} size={13} style={{ color: '#f59e0b', fill: '#f59e0b', filter: 'drop-shadow(0 0 4px rgba(245,158,11,0.6))' }} />
-                    ))}
-                  </div>
-
-                  {/* Contenu */}
-                  <p className="text-sm leading-relaxed mb-5 italic" style={{ color: 'rgba(240,240,244,0.65)' }}>
-                    &ldquo;{t.content}&rdquo;
-                  </p>
-
-                  {/* Tag projet inset */}
-                  {t.project && (
-                    <div className="mb-5">
-                      <span
-                        className="text-[11px] px-3 py-1.5 rounded-lg font-medium"
-                        style={{
-                          background: 'var(--bg-1)',
-                          borderTop:    '1px solid rgba(0,0,0,0.4)',
-                          borderBottom: '1px solid rgba(179,44,37,0.08)',
-                          color: 'var(--red)',
-                          boxShadow: '0 1px 4px rgba(0,0,0,0.4) inset',
-                        }}
-                      >
-                        {t.project}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Séparateur 3D */}
-                  <div className="divider-3d mb-5" />
-
-                  {/* Auteur */}
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-sm font-bold shrink-0"
-                      style={{
-                        background: `linear-gradient(145deg, ${t.color}, ${t.color}80)`,
-                        borderTop:    '1px solid rgba(255,255,255,0.15)',
-                        borderBottom: '1px solid rgba(0,0,0,0.4)',
-                        boxShadow: `0 4px 12px rgba(0,0,0,0.4), 0 0 16px ${t.color}30`,
-                      }}
-                    >
-                      {t.initials}
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>{t.name}</p>
-                      <p className="text-xs" style={{ color: 'rgba(240,240,244,0.38)' }}>{t.role} · {t.company}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              Ce que disent nos clients
+            </motion.h2>
+            <motion.p variants={fadeInUp} className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(240,240,244,0.4)' }}>
+              Plus de 500 missions réalisées. Une note de satisfaction de 9.2/10 auprès de nos commanditaires.
+            </motion.p>
+            <motion.div variants={fadeInUp} className="flex items-center gap-3">
+              {[1,2,3,4,5].map((s) => (
+                <svg key={s} width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 0.5L8.7 5.2H13.7L9.8 8.1L11.3 12.8L7 10L2.7 12.8L4.2 8.1L0.3 5.2H5.3L7 0.5Z"/>
+                </svg>
+              ))}
+              <span className="text-[11px] font-bold ml-1" style={{ color: 'rgba(240,240,244,0.4)' }}>9.2 / 10</span>
             </motion.div>
-          ))}
-        </motion.div>
+          </motion.div>
+
+          {/* RIGHT: testimonial list */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+            className="lg:w-[64%]"
+          >
+            <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+            {testimonials.map((t, i) => (
+              <motion.div
+                key={t.id}
+                variants={fadeInUp}
+                transition={{ delay: i * 0.08 }}
+                className="py-8"
+                style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  {/* Avatar */}
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-bold shrink-0"
+                    style={{
+                      background: `linear-gradient(145deg, ${t.color}, ${t.color}80)`,
+                      boxShadow: `0 4px 12px ${t.color}30`,
+                    }}
+                  >
+                    {t.initials}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>{t.name}</p>
+                    <p className="text-[11px]" style={{ color: 'rgba(240,240,244,0.36)' }}>
+                      {t.role} · {t.company}
+                    </p>
+                  </div>
+                  {t.project && (
+                    <span className="text-[10px] font-medium uppercase tracking-wide shrink-0"
+                      style={{ color: 'var(--red)' }}>
+                      {t.project}
+                    </span>
+                  )}
+                </div>
+                <p
+                  className="text-sm leading-relaxed pl-14"
+                  style={{ color: 'rgba(240,240,244,0.58)' }}
+                >
+                  &ldquo;{t.content}&rdquo;
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   )

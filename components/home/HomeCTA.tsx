@@ -1,56 +1,105 @@
-﻿'use client'
+'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Zap } from 'lucide-react'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { staggerContainer, fadeInUp, viewportOnce } from '@/animations'
+
+const words = ['Votre projet', 'mérite une', 'équipe', 'd\'excellence.']
 
 export function HomeCTA() {
   return (
-    <section className="py-24 lg:py-32 bg-[#0d0d12] relative overflow-hidden">
-      {/* Background effect */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#B32C25] opacity-[0.05] blur-[100px] rounded-full" />
-      </div>
-      <div className="line-grid absolute inset-0 opacity-20" />
+    <section className="relative overflow-hidden" style={{ background: 'var(--bg-0)' }}>
+      <div className="absolute top-0 left-0 right-0 h-px" style={{
+        background: 'linear-gradient(90deg, transparent, rgba(179,44,37,0.4) 40%, rgba(109,195,213,0.4) 65%, transparent)'
+      }} />
 
-      <div className="max-w-[900px] mx-auto px-6 relative text-center">
+      {/* Red glow */}
+      <div
+        className="absolute bottom-0 right-0 w-[700px] h-[700px] pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(179,44,37,0.07) 0%, transparent 65%)' }}
+      />
+
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-14 py-28 lg:py-36 flex flex-col justify-between gap-16 relative z-10">
+        {/* Big text */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
         >
-          <motion.div variants={fadeInUp} className="mb-6">
-            <span className="badge">
-              <Zap size={10} className="fill-[#B32C25]" />
-              Réponse sous 48h
-            </span>
-          </motion.div>
+          {words.map((word, i) => (
+            <div key={word} className="overflow-hidden">
+              <motion.span
+                variants={fadeInUp}
+                transition={{ delay: i * 0.1, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                className="block font-black uppercase select-none"
+                style={{
+                  fontSize: 'clamp(2.5rem, 7.5vw, 9rem)',
+                  lineHeight: 0.9,
+                  letterSpacing: '-0.04em',
+                  color: i === 3 ? 'var(--red)' : 'var(--text)',
+                }}
+              >
+                {word}
+              </motion.span>
+            </div>
+          ))}
+        </motion.div>
 
-          <motion.h2 variants={fadeInUp} className="text-[clamp(2.2rem,5vw,4rem)] font-extrabold tracking-[-0.04em] text-[#f5f5f7] leading-tight mb-6">
-            Votre projet mérite <br />
-            <em className="not-italic text-gradient">une équipe d&apos;excellence</em>
-          </motion.h2>
+        {/* Bottom bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={viewportOnce}
+          transition={{ delay: 0.5, duration: 0.7 }}
+          className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6"
+          style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '24px' }}
+        >
+          <p className="text-[10px] uppercase tracking-widest max-w-xs" style={{ color: 'rgba(240,240,244,0.22)' }}>
+            Devis gratuit · Sans engagement · Réponse sous 48h
+          </p>
 
-          <motion.p variants={fadeInUp} className="text-base text-[rgba(245,245,247,0.55)] leading-relaxed max-w-xl mx-auto mb-10">
-            Demandez votre devis gratuit en 2 minutes. Notre équipe analyse votre besoin
-            et vous répond sous 48h avec une proposition sur-mesure.
-          </motion.p>
-
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-red text-sm w-full sm:w-auto justify-center">
-              Demander un devis gratuit
-              <ArrowRight size={16} />
+          <div className="flex gap-3">
+            <Link
+              href="/contact"
+              className="group flex flex-col justify-between rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1"
+              style={{
+                minWidth: '148px',
+                minHeight: '86px',
+                background: 'var(--red)',
+                boxShadow: '0 4px 24px rgba(179,44,37,0.45)',
+              }}
+            >
+              <span className="text-[9px] uppercase tracking-[0.28em] block" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                Gratuit
+              </span>
+              <span className="text-[13px] font-bold text-white flex items-center gap-1.5 group-hover:gap-2.5 transition-all mt-auto pt-4">
+                Demander un devis <ArrowRight size={12} />
+              </span>
             </Link>
-            <Link href="/realisations" className="btn-ghost text-sm w-full sm:w-auto justify-center">
-              Voir nos réalisations
+            <Link
+              href="/realisations"
+              className="group flex flex-col justify-between rounded-2xl p-5 transition-transform duration-300 hover:-translate-y-1"
+              style={{
+                minWidth: '148px',
+                minHeight: '86px',
+                background: 'var(--bg-3)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.35)',
+              }}
+            >
+              <span className="text-[9px] uppercase tracking-[0.28em] block" style={{ color: 'rgba(240,240,244,0.28)' }}>
+                Portfolio
+              </span>
+              <span
+                className="text-[13px] font-bold flex items-center gap-1.5 group-hover:gap-2.5 transition-all mt-auto pt-4"
+                style={{ color: 'var(--text)' }}
+              >
+                Réalisations <ArrowUpRight size={12} />
+              </span>
             </Link>
-          </motion.div>
-
-          <motion.p variants={fadeInUp} className="mt-8 text-xs text-[rgba(245,245,247,0.3)]">
-            Gratuit · Sans engagement · Réponse garantie sous 48h
-          </motion.p>
+          </div>
         </motion.div>
       </div>
     </section>
