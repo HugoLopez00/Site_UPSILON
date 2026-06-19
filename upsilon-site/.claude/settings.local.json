@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:www.upsilon-toulouse.fr)",
-      "PowerShell($env:PATH = $env:PATH + \";C:\\\\Program Files\\\\nodejs\"; npm --version)"
-    ]
-  }
-}

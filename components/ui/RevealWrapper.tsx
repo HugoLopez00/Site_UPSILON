@@ -7,14 +7,11 @@ interface RevealWrapperProps {
   children: React.ReactNode
   className?: string
   delay?: number
-  as?: keyof JSX.IntrinsicElements
 }
 
-export function RevealWrapper({ children, className, delay = 0, as = 'div' }: RevealWrapperProps) {
-  const MotionComponent = motion[as as keyof typeof motion] as typeof motion.div
-
+export function RevealWrapper({ children, className, delay = 0 }: RevealWrapperProps) {
   return (
-    <MotionComponent
+    <motion.div
       variants={fadeInUp}
       initial="hidden"
       whileInView="visible"
@@ -23,6 +20,6 @@ export function RevealWrapper({ children, className, delay = 0, as = 'div' }: Re
       className={className}
     >
       {children}
-    </MotionComponent>
+    </motion.div>
   )
 }
