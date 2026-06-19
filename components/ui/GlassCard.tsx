@@ -11,9 +11,9 @@ export function GlassCard({ children, className, hover = true, glow = false }: G
   return (
     <div
       className={cn(
-        'glass rounded-2xl relative overflow-hidden',
-        hover && 'glass-hover',
-        glow && 'shadow-red-glow',
+        'card rounded-2xl relative overflow-hidden',
+        hover && 'card-hover',
+        glow && 'card-red',
         className
       )}
     >

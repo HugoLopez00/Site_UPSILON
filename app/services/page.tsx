@@ -104,7 +104,7 @@ export default function ServicesPage() {
                 className={`space-y-4 ${i % 2 === 1 ? 'lg:col-start-1' : ''}`}
               >
                 {/* Methodology */}
-                <div className="glass rounded-2xl p-6">
+                <div className="card rounded-2xl p-6">
                   <h3 className="text-sm font-bold text-[#f5f5f7] mb-4 flex items-center gap-2">
                     <span
                       className="w-2 h-2 rounded-full"
@@ -124,7 +124,7 @@ export default function ServicesPage() {
                 </div>
 
                 {/* Use cases */}
-                <div className="glass rounded-2xl p-6">
+                <div className="card rounded-2xl p-6">
                   <h3 className="text-sm font-bold text-[#f5f5f7] mb-4 flex items-center gap-2">
                     <span
                       className="w-2 h-2 rounded-full"

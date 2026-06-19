@@ -38,7 +38,7 @@ export default function PolitiqueConfidentialitePage() {
 
           <section>
             <h2 className="text-base font-bold text-[#f5f5f7] mb-3">3. Finalités et bases légales</h2>
-            <div className="glass rounded-xl p-5 space-y-3">
+            <div className="card rounded-xl p-5 space-y-3">
               {[
                 { finalite: 'Traitement de votre demande de contact', base: 'Intérêt légitime' },
                 { finalite: 'Traitement de votre candidature', base: 'Consentement' },

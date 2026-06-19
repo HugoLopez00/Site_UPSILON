@@ -106,7 +106,7 @@ export default function AProposPage() {
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
-              className="glass rounded-2xl p-8 relative overflow-hidden"
+              className="card rounded-2xl p-8 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#B32C25] to-transparent" />
               <div className="text-3xl mb-4">🎯</div>
@@ -123,7 +123,7 @@ export default function AProposPage() {
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
-              className="glass rounded-2xl p-8 relative overflow-hidden"
+              className="card rounded-2xl p-8 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6366f1] to-transparent" />
               <div className="text-3xl mb-4">👁️</div>
@@ -175,7 +175,7 @@ export default function AProposPage() {
                 >
                   {/* Content */}
                   <div className={`flex-1 ${i % 2 === 0 ? 'lg:text-right' : ''}`}>
-                    <div className="glass rounded-2xl p-6 group hover:border-white/[0.12] transition-colors">
+                    <div className="card rounded-2xl p-6 group hover:border-white/[0.12] transition-colors">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="text-2xl">{item.icon}</span>
                         <span className="text-xs font-bold text-[#B32C25] uppercase tracking-widest">{item.year}</span>
@@ -226,7 +226,7 @@ export default function AProposPage() {
               const Icon = value.icon
               return (
                 <motion.div key={value.title} variants={fadeInUp}>
-                  <div className="glass glass-hover rounded-2xl p-6 h-full text-center group">
+                  <div className="card card-hover rounded-2xl p-6 h-full text-center group">
                     <div
                       className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
                       style={{ background: `${value.color}15`, border: `1px solid ${value.color}30` }}
@@ -276,7 +276,7 @@ export default function AProposPage() {
               <motion.div
                 key={pole}
                 variants={fadeInUp}
-                className="glass rounded-xl p-4 text-center group hover:border-[rgba(196,30,58,0.3)] transition-colors"
+                className="card rounded-xl p-4 text-center group hover:border-[rgba(196,30,58,0.3)] transition-colors"
               >
                 <div className="text-2xl mb-2">
                   {['🏛️', '💼', '✅', '👥', '💻', '📢'][i]}

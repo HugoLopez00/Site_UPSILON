@@ -55,7 +55,7 @@ export default function EquipePage() {
                 variants={scaleIn}
                 className="group"
               >
-                <div className="glass rounded-2xl overflow-hidden h-full relative">
+                <div className="card rounded-2xl overflow-hidden h-full relative">
                   {/* Card top accent */}
                   <div
                     className="absolute top-0 left-0 right-0 h-0.5 opacity-60 group-hover:opacity-100 transition-opacity"

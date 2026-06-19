@@ -84,7 +84,7 @@ export default function ContactPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="glass rounded-2xl p-12 text-center h-full flex flex-col items-center justify-center"
+                  className="card rounded-2xl p-12 text-center h-full flex flex-col items-center justify-center"
                 >
                   <CheckCircle size={56} className="text-[#10b981] mb-6" />
                   <h2 className="text-2xl font-bold text-[#f5f5f7] mb-3">Message envoyé !</h2>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   initial="hidden"
                   animate="visible"
                   onSubmit={handleSubmit}
-                  className="glass rounded-2xl p-8 space-y-5"
+                  className="card rounded-2xl p-8 space-y-5"
                 >
                   <h2 className="text-lg font-bold text-[#f5f5f7] mb-6">Envoyer un message</h2>
 
@@ -189,7 +189,7 @@ export default function ContactPage() {
               className="lg:col-span-2 space-y-4"
             >
               {/* Contact info */}
-              <div className="glass rounded-2xl p-6">
+              <div className="card rounded-2xl p-6">
                 <h3 className="text-sm font-bold text-[#f5f5f7] mb-5">Nos coordonnées</h3>
                 <div className="space-y-4">
                   {contactInfo.map((info) => {
@@ -216,7 +216,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map placeholder */}
-              <div className="glass rounded-2xl overflow-hidden h-48 relative">
+              <div className="card rounded-2xl overflow-hidden h-48 relative">
                 <div className="absolute inset-0 dot-grid opacity-30" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
                   <MapPin size={24} className="text-[#B32C25]" />
@@ -227,7 +227,7 @@ export default function ContactPage() {
               </div>
 
               {/* Quick stats */}
-              <div className="glass rounded-2xl p-5 grid grid-cols-2 gap-4">
+              <div className="card rounded-2xl p-5 grid grid-cols-2 gap-4">
                 {[
                   { n: '<48h', label: 'Délai de réponse' },
                   { n: '100%', label: 'Devis gratuit' },
@@ -272,7 +272,7 @@ export default function ContactPage() {
           >
             {faq.map((item, i) => (
               <motion.div key={i} variants={fadeInUp}>
-                <div className="glass rounded-xl overflow-hidden">
+                <div className="card rounded-xl overflow-hidden">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="w-full flex items-center justify-between px-6 py-4 text-left group"

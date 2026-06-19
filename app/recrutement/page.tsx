@@ -141,7 +141,7 @@ export default function RecrutementPage() {
           >
             {benefits.map((b) => (
               <motion.div key={b.title} variants={fadeInUp}>
-                <div className="glass glass-hover rounded-2xl p-6 h-full">
+                <div className="card card-hover rounded-2xl p-6 h-full">
                   <div className="text-3xl mb-4">{b.icon}</div>
                   <h3 className="text-sm font-bold text-[#f5f5f7] mb-2">{b.title}</h3>
                   <p className="text-sm text-[rgba(245,245,247,0.5)] leading-relaxed">{b.description}</p>
@@ -181,7 +181,7 @@ export default function RecrutementPage() {
               <motion.div
                 key={role.role}
                 variants={fadeInUp}
-                className="glass glass-hover rounded-xl px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group cursor-pointer"
+                className="card card-hover rounded-xl px-6 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group cursor-pointer"
                 onClick={() => document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <div className="flex items-center gap-4">
@@ -230,7 +230,7 @@ export default function RecrutementPage() {
                 whileInView="visible"
                 viewport={viewportOnce}
                 transition={{ delay: i * 0.1 }}
-                className="glass rounded-2xl p-6 relative group"
+                className="card rounded-2xl p-6 relative group"
               >
                 <div className="text-4xl font-black text-[rgba(245,245,247,0.06)] font-mono mb-4">{step.number}</div>
                 <h3 className="text-sm font-bold text-[#f5f5f7] mb-2">{step.title}</h3>
@@ -270,7 +270,7 @@ export default function RecrutementPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="glass rounded-2xl p-12 text-center"
+              className="card rounded-2xl p-12 text-center"
             >
               <CheckCircle size={48} className="text-[#10b981] mx-auto mb-4" />
               <h3 className="text-xl font-bold text-[#f5f5f7] mb-2">Candidature envoyée !</h3>
@@ -285,7 +285,7 @@ export default function RecrutementPage() {
               whileInView="visible"
               viewport={viewportOnce}
               onSubmit={handleSubmit}
-              className="glass rounded-2xl p-8 space-y-5"
+              className="card rounded-2xl p-8 space-y-5"
             >
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>

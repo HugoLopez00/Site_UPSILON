@@ -8,35 +8,36 @@
     --red:        #B32C25;
     --red-light:  #CC3830;
     --red-dark:   #8C2019;
-    --slate:      #4B474E;
     --steel:      #477181;
-    --gray:       #8E9599;
     --teal:       #6DC3D5;
-    --sand:       #D2C3AB;
     --mint:       #B1D8D0;
-    --cream:      #FEF7EE;
+    --sand:       #D2C3AB;
 
-    /* ── Fonds UI sombres ── */
-    --bg:         #07070a;
-    --bg-surface: #0e0e12;
-    --bg-elevated:#16161c;
-    --border:     rgba(255, 255, 255, 0.06);
-    --border-hover: rgba(255, 255, 255, 0.12);
+    /* ── Système de couches (Z-depth) ── */
+    --bg-0:       #050508;   /* sol — le plus profond */
+    --bg-1:       #0a0a0f;   /* fond de page */
+    --bg-2:       #111117;   /* surfaces posées */
+    --bg-3:       #18181f;   /* cartes flottantes */
+    --bg-4:       #1f1f28;   /* éléments en avant */
+    --bg-5:       #26262f;   /* tooltips / modales */
+
+    /* ── Bordures directionnelles (lumière du dessus) ── */
+    --border-top:    rgba(255, 255, 255, 0.12);
+    --border-side:   rgba(255, 255, 255, 0.05);
+    --border-bottom: rgba(0, 0, 0, 0.5);
 
     /* ── Texte ── */
-    --text:       #f5f5f7;
-    --text-dim:   rgba(245, 245, 247, 0.65);
-    --text-muted: rgba(245, 245, 247, 0.4);
+    --text:       #f0f0f4;
+    --text-dim:   rgba(240, 240, 244, 0.6);
+    --text-muted: rgba(240, 240, 244, 0.35);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   body {
-    background-color: var(--bg);
+    background-color: var(--bg-1);
     color: var(--text);
-    /* Police officielle Upsilon : Helvetica */
     font-family: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -45,194 +46,282 @@
   }
 
   ::selection { background: var(--red); color: #fff; }
-
-  :focus-visible {
-    outline: 2px solid var(--red);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; border-radius: 4px; }
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
   ul { list-style: none; }
 }
 
 @layer components {
-  /* ── Glassmorphism ── */
-  .glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.04);
+
+  /* ══════════════════════════════════════════════
+     SYSTÈME DE CARTES AVEC DIMENSION PHYSIQUE
+     Lumière venant du haut → bord haut = clair,
+     bord bas = sombre, ombre projetée en dessous.
+  ══════════════════════════════════════════════ */
+
+  /* Niveau 1 — carte simple, légèrement surélevée */
+  .card {
+    background: linear-gradient(160deg, var(--bg-3) 0%, var(--bg-2) 100%);
+    border-top:    1px solid var(--border-top);
+    border-left:   1px solid var(--border-side);
+    border-right:  1px solid var(--border-side);
+    border-bottom: 1px solid var(--border-bottom);
+    border-radius: 16px;
+    box-shadow:
+      0 1px 0   rgba(255,255,255,0.04) inset,
+      0 2px 4px   rgba(0,0,0,0.4),
+      0 8px 16px  rgba(0,0,0,0.35),
+      0 20px 40px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
   }
 
-  .glass-hover {
-    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  /* Niveau 2 — carte haute, effet "posée sur la table" */
+  .card-elevated {
+    background: linear-gradient(160deg, var(--bg-4) 0%, var(--bg-3) 100%);
+    border-top:    1px solid rgba(255,255,255,0.14);
+    border-left:   1px solid rgba(255,255,255,0.07);
+    border-right:  1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(0,0,0,0.6);
+    border-radius: 20px;
+    box-shadow:
+      0 1px 0   rgba(255,255,255,0.06) inset,
+      0 4px 8px   rgba(0,0,0,0.5),
+      0 12px 24px rgba(0,0,0,0.45),
+      0 32px 64px rgba(0,0,0,0.3),
+      0 0 0 1px  rgba(0,0,0,0.4);
   }
 
-  .glass-hover:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 48px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.07);
+  /* Hover lift — carte qui monte vers le spectateur */
+  .card-hover {
+    cursor: pointer;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(160deg, var(--bg-4) 0%, var(--bg-3) 100%);
+    box-shadow:
+      0 1px 0   rgba(255,255,255,0.07) inset,
+      0 8px 16px  rgba(0,0,0,0.5),
+      0 20px 40px rgba(0,0,0,0.45),
+      0 40px 80px rgba(0,0,0,0.3),
+      0 0 0 1px  rgba(0,0,0,0.5);
   }
 
-  /* ── Dégradé texte rouge (gradient Upsilon) ── */
-  .text-gradient {
-    background: linear-gradient(135deg, #CC3830 0%, #B32C25 40%, #8C2019 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Carte avec highlight rouge (sélectionnée / featured) */
+  .card-red {
+    background: linear-gradient(160deg, #1a0f0f 0%, #120b0b 100%);
+    border-top:    1px solid rgba(179,44,37,0.35);
+    border-left:   1px solid rgba(179,44,37,0.15);
+    border-right:  1px solid rgba(0,0,0,0.4);
+    border-bottom: 1px solid rgba(0,0,0,0.6);
+    border-radius: 16px;
+    box-shadow:
+      0 1px 0   rgba(179,44,37,0.15) inset,
+      0 4px 8px   rgba(0,0,0,0.5),
+      0 12px 32px rgba(0,0,0,0.4),
+      0 0 60px   rgba(179,44,37,0.08);
   }
 
-  /* ── Dégradé texte teal ── */
-  .text-gradient-teal {
-    background: linear-gradient(135deg, #6DC3D5 0%, #477181 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Inset — effet "creux" (inputs, zones de données) */
+  .inset {
+    background: var(--bg-1);
+    border-top:    1px solid rgba(0,0,0,0.5);
+    border-left:   1px solid rgba(0,0,0,0.3);
+    border-right:  1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    box-shadow:
+      0 2px 6px  rgba(0,0,0,0.5) inset,
+      0 8px 24px rgba(0,0,0,0.3) inset;
   }
 
-  /* ── Badge rouge Upsilon ── */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 12px;
-    border-radius: 100px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: 1px solid rgba(179, 44, 37, 0.4);
-    color: var(--red);
-    background: rgba(179, 44, 37, 0.08);
-  }
+  /* ══════════════════════════════════════════════
+     BOUTONS PHYSIQUES (pas plats)
+  ══════════════════════════════════════════════ */
 
-  /* ── Grilles de fond ── */
-  .dot-grid {
-    background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  .line-grid {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  /* ── Motif diagonal (rappel du logo Upsilon) ── */
-  .diagonal-pattern {
-    background-image: repeating-linear-gradient(
-      -55deg,
-      transparent,
-      transparent 14px,
-      rgba(255,255,255,0.03) 14px,
-      rgba(255,255,255,0.03) 15px
-    );
-  }
-
-  /* ── Bouton rouge primaire ── */
   .btn-red {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 26px;
-    background: var(--red);
+    padding: 13px 28px;
+    background: linear-gradient(160deg, var(--red-light) 0%, var(--red) 50%, var(--red-dark) 100%);
     color: #fff;
     font-family: inherit;
     font-size: 0.875rem;
-    font-weight: 600;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.25s ease;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border-radius: 10px;
+    border-top:    1px solid rgba(255,255,255,0.2);
+    border-left:   1px solid rgba(255,255,255,0.1);
+    border-right:  1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.35);
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    letter-spacing: 0.01em;
-  }
-
-  .btn-red::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.25s;
+    transition: all 0.2s ease;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.15) inset,
+      0 2px 4px  rgba(0,0,0,0.4),
+      0 6px 12px rgba(179,44,37,0.35),
+      0 12px 24px rgba(179,44,37,0.15);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   }
 
   .btn-red:hover {
-    background: var(--red-light);
-    box-shadow: 0 8px 24px rgba(179, 44, 37, 0.4);
-    transform: translateY(-1px);
+    background: linear-gradient(160deg, #D93F38 0%, var(--red-light) 50%, var(--red) 100%);
+    transform: translateY(-2px);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.2) inset,
+      0 4px 8px  rgba(0,0,0,0.5),
+      0 10px 20px rgba(179,44,37,0.45),
+      0 20px 40px rgba(179,44,37,0.2);
   }
 
-  .btn-red:hover::before { opacity: 1; }
-  .btn-red:active { transform: translateY(0); }
+  .btn-red:active {
+    transform: translateY(1px);
+    box-shadow:
+      0 0 0 rgba(255,255,255,0.1) inset,
+      0 1px 2px rgba(0,0,0,0.5),
+      0 2px 8px rgba(179,44,37,0.3);
+  }
 
-  /* ── Bouton ghost (secondaire) ── */
   .btn-ghost {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 12px 26px;
-    background: transparent;
-    color: rgba(245,245,247,0.75);
-    font-family: inherit;
-    font-size: 0.875rem;
-    font-weight: 500;
-    border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: all 0.25s ease;
-    cursor: pointer;
-    letter-spacing: 0.01em;
-  }
-
-  .btn-ghost:hover {
-    background: rgba(255,255,255,0.05);
-    border-color: rgba(255,255,255,0.2);
-    color: var(--text);
-  }
-
-  /* ── Bouton teal (accentuation Upsilon) ── */
-  .btn-teal {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 26px;
-    background: rgba(109, 195, 213, 0.12);
-    color: #6DC3D5;
+    padding: 13px 28px;
+    background: linear-gradient(160deg, var(--bg-4) 0%, var(--bg-3) 100%);
+    color: rgba(240,240,244,0.8);
     font-family: inherit;
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 8px;
-    border: 1px solid rgba(109, 195, 213, 0.25);
-    transition: all 0.25s ease;
+    letter-spacing: 0.01em;
+    border-radius: 10px;
+    border-top:    1px solid rgba(255,255,255,0.1);
+    border-left:   1px solid rgba(255,255,255,0.07);
+    border-right:  1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.4);
     cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.05) inset,
+      0 2px 4px  rgba(0,0,0,0.4),
+      0 6px 16px rgba(0,0,0,0.25);
   }
 
-  .btn-teal:hover {
-    background: rgba(109, 195, 213, 0.2);
-    border-color: rgba(109, 195, 213, 0.4);
-    box-shadow: 0 0 24px rgba(109, 195, 213, 0.15);
+  .btn-ghost:hover {
+    background: linear-gradient(160deg, var(--bg-5) 0%, var(--bg-4) 100%);
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.08) inset,
+      0 4px 8px  rgba(0,0,0,0.5),
+      0 12px 24px rgba(0,0,0,0.3);
+  }
+
+  .btn-ghost:active { transform: translateY(1px); }
+
+  /* ══════════════════════════════════════════════
+     BADGE
+  ══════════════════════════════════════════════ */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red-light);
+    background: linear-gradient(135deg, rgba(179,44,37,0.18) 0%, rgba(140,32,25,0.08) 100%);
+    border-top:    1px solid rgba(179,44,37,0.35);
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    border-left:   1px solid rgba(179,44,37,0.2);
+    border-right:  1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(179,44,37,0.12), 0 1px 0 rgba(255,255,255,0.04) inset;
+  }
+
+  /* ══════════════════════════════════════════════
+     INPUTS
+  ══════════════════════════════════════════════ */
+  .input-field {
+    width: 100%;
+    background: var(--bg-1);
+    border-top:    1px solid rgba(0,0,0,0.5);
+    border-left:   1px solid rgba(0,0,0,0.3);
+    border-right:  1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5) inset, 0 1px 0 rgba(255,255,255,0.03) inset;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  .input-field::placeholder { color: var(--text-muted); }
+
+  .input-field:focus {
+    border-top-color:    rgba(179,44,37,0.4);
+    border-left-color:   rgba(179,44,37,0.25);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5) inset, 0 0 0 2px rgba(179,44,37,0.15);
+  }
+
+  /* ══════════════════════════════════════════════
+     GRILLES DE FOND
+  ══════════════════════════════════════════════ */
+  .dot-grid {
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  .perspective-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    transform: perspective(600px) rotateX(30deg);
+    transform-origin: top center;
+  }
+
+  /* ══════════════════════════════════════════════
+     TEXTES DÉGRADÉS
+  ══════════════════════════════════════════════ */
+  .text-gradient {
+    background: linear-gradient(135deg, #CC3830 0%, #B32C25 50%, #8C2019 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #6DC3D5 0%, #B1D8D0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ══════════════════════════════════════════════
+     DIVIDERS AVEC DIMENSION
+  ══════════════════════════════════════════════ */
+  .divider-3d {
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(255,255,255,0.08) 20%,
+      rgba(255,255,255,0.12) 50%,
+      rgba(255,255,255,0.08) 80%,
+      transparent 100%
+    );
+    box-shadow: 0 1px 0 rgba(0,0,0,0.4);
   }
 }
 
 @layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
   .scrollbar-hide::-webkit-scrollbar { display: none; }
-}
-
-@keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position:  200% 0; }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-14px); }
 }

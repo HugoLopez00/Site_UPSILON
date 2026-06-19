@@ -109,7 +109,7 @@ export default function CguPage() {
             </p>
           </section>
 
-          <div className="glass rounded-xl p-5 border border-white/[0.06]">
+          <div className="card rounded-xl p-5 border border-white/[0.06]">
             <p className="text-xs text-[rgba(245,245,247,0.5)]">
               Pour toute question relative aux CGU, contactez-nous à{' '}
               <span className="text-[#B32C25]">contact@upsilon-toulouse.fr</span>

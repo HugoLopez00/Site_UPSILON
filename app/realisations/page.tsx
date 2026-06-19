@@ -89,7 +89,7 @@ export default function RealisationsPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.06, duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
                 >
-                  <div className="group glass glass-hover rounded-2xl overflow-hidden h-full flex flex-col">
+                  <div className="group card card-hover rounded-2xl overflow-hidden h-full flex flex-col">
                     {/* Image placeholder */}
                     <div className="relative h-44 overflow-hidden bg-gradient-to-br from-[rgba(196,30,58,0.08)] to-[rgba(99,102,241,0.08)] flex-shrink-0">
                       <div className="absolute inset-0 dot-grid opacity-40" />

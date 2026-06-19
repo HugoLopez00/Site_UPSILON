@@ -72,7 +72,7 @@ export function Process() {
               whileInView="visible"
               viewport={viewportOnce}
               transition={{ delay: i * 0.1 }}
-              className="group glass glass-hover rounded-2xl p-6 lg:p-8"
+              className="group card card-hover rounded-2xl p-6 lg:p-8"
             >
               <div className="flex flex-col lg:flex-row lg:items-center gap-6">
                 {/* Number + Icon */}
