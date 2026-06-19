@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -46,7 +46,7 @@ export function ServicesOverview() {
             <motion.p
               variants={fadeInUp}
               className="text-sm leading-relaxed mb-8"
-              style={{ color: 'rgba(240,240,244,0.4)' }}
+              style={{ color: 'rgba(28,20,24,0.4)' }}
             >
               Chaque prestation est réalisée par des étudiants triés sur le volet, encadrés par un pôle qualité certifié CNJE.
             </motion.p>
@@ -65,17 +65,17 @@ export function ServicesOverview() {
             viewport={viewportOnce}
             className="lg:w-[64%]"
           >
-            <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+            <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
             {services.map((service, i) => (
               <motion.div key={service.id} variants={fadeInUp} transition={{ delay: i * 0.07 }}>
                 <Link
                   href={`/services#${service.id}`}
                   className="group flex items-center gap-5 py-5 lg:py-6"
-                  style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+                  style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}
                 >
                   <span
                     className="text-[11px] font-mono w-8 shrink-0 tabular-nums"
-                    style={{ color: 'rgba(240,240,244,0.18)' }}
+                    style={{ color: 'rgba(28,20,24,0.18)' }}
                   >
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -103,3 +103,4 @@ export function ServicesOverview() {
     </section>
   )
 }
+

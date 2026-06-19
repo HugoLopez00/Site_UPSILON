@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -11,7 +11,7 @@ const cardStyles = [
   { bg: 'var(--red)', text: '#fff', muted: 'rgba(255,255,255,0.6)' },
   { bg: '#0e2229', text: 'var(--teal)', muted: 'rgba(109,195,213,0.52)' },
   { bg: 'var(--teal)', text: 'var(--bg-0)', muted: 'rgba(5,5,8,0.52)' },
-  { bg: 'var(--bg-4)', text: 'var(--text)', muted: 'rgba(240,240,244,0.36)' },
+  { bg: 'var(--bg-4)', text: '#FFFFFF', muted: 'rgba(255,255,255,0.45)' },
 ]
 
 export function Stats() {
@@ -53,7 +53,7 @@ export function Stats() {
             <motion.p
               variants={fadeInUp}
               className="text-sm leading-relaxed mb-8"
-              style={{ color: 'rgba(240,240,244,0.4)' }}
+              style={{ color: 'rgba(28,20,24,0.4)' }}
             >
               Depuis 2011, UPSILON mobilise les meilleurs talents de l&apos;Université de Toulouse pour réaliser des projets à fort impact.
             </motion.p>
@@ -84,7 +84,7 @@ export function Stats() {
                   style={{
                     background: s.bg,
                     minHeight: '172px',
-                    boxShadow: '0 6px 30px rgba(0,0,0,0.32)',
+                    boxShadow: '0 6px 30px rgba(28,20,24,0.15)',
                   }}
                 >
                   <p
@@ -113,3 +113,5 @@ export function Stats() {
     </section>
   )
 }
+
+

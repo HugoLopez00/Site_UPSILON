@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeInUp, viewportOnce } from '@/animations'
@@ -57,7 +57,7 @@ export function Process() {
             >
               Un accompagnement structuré, de bout en bout
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-sm leading-relaxed" style={{ color: 'rgba(240,240,244,0.4)' }}>
+            <motion.p variants={fadeInUp} className="text-sm leading-relaxed" style={{ color: 'rgba(28,20,24,0.4)' }}>
               Notre méthodologie éprouvée garantit des livrables de qualité professionnelle dans les délais convenus.
               Certifiée Marque Junior-Entreprise CNJE.
             </motion.p>
@@ -71,14 +71,14 @@ export function Process() {
             viewport={viewportOnce}
             className="lg:w-[64%]"
           >
-            <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+            <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
             {steps.map((step, i) => (
               <motion.div
                 key={step.number}
                 variants={fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 className="group py-7 lg:py-8"
-                style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+                style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}
               >
                 <div className="flex items-baseline gap-5 mb-3">
                   <span
@@ -94,7 +94,7 @@ export function Process() {
                     {step.title}
                   </h3>
                 </div>
-                <p className="text-sm leading-relaxed mb-4 pl-9" style={{ color: 'rgba(240,240,244,0.42)' }}>
+                <p className="text-sm leading-relaxed mb-4 pl-9" style={{ color: 'rgba(28,20,24,0.42)' }}>
                   {step.description}
                 </p>
                 <div className="flex flex-wrap gap-2 pl-9">
@@ -104,8 +104,8 @@ export function Process() {
                       className="text-[10px] px-2.5 py-1 rounded-lg font-medium uppercase tracking-wide"
                       style={{
                         background: 'var(--bg-2)',
-                        border: '1px solid rgba(255,255,255,0.06)',
-                        color: 'rgba(240,240,244,0.38)',
+                        border: '1px solid rgba(28,20,24,0.08)',
+                        color: 'rgba(28,20,24,0.38)',
                       }}
                     >
                       {detail}
@@ -120,3 +120,4 @@ export function Process() {
     </section>
   )
 }
+

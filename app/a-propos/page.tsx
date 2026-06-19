@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -30,14 +30,14 @@ export default function AProposPage() {
       {/* ── HERO ── */}
       <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden pb-16 pt-32" style={{ background: 'var(--bg-0)' }}>
         <div className="absolute inset-0 pointer-events-none select-none" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.016) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(28,20,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,20,24,0.05) 1px, transparent 1px)',
           backgroundSize: '64px 64px',
         }} />
         <div className="absolute top-1/2 left-0 w-[700px] h-[700px] -translate-y-1/2 pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(179,44,37,0.07) 0%, transparent 62%)' }} />
 
         <div className="max-w-[1200px] mx-auto px-6 lg:px-14 relative z-10">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-[10px] uppercase tracking-[0.42em] mb-10" style={{ color: 'rgba(240,240,244,0.25)' }}>
+            className="text-[10px] uppercase tracking-[0.42em] mb-10" style={{ color: 'rgba(28,20,24,0.25)' }}>
             UPSILON · Junior-Entreprise · Toulouse
           </motion.p>
           {heroWords.map((word, i) => (
@@ -54,7 +54,7 @@ export default function AProposPage() {
             </div>
           ))}
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.7 }}
-            className="text-sm leading-relaxed mt-8 max-w-lg" style={{ color: 'rgba(240,240,244,0.4)' }}>
+            className="text-sm leading-relaxed mt-8 max-w-lg" style={{ color: 'rgba(28,20,24,0.4)' }}>
             Fondée en 2011, UPSILON est la Junior-Entreprise de l&apos;Université de Toulouse.
             Nous réalisons des prestations d&apos;ingénierie et de conseil grâce au talent des étudiants toulousains.
           </motion.p>
@@ -81,15 +81,15 @@ export default function AProposPage() {
             </motion.div>
 
             <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce} className="lg:w-[64%]">
-              <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+              <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
               {[
                 { title: 'Notre Mission', description: 'Réaliser des prestations d\'ingénierie et de conseil de haute qualité en mobilisant les compétences des étudiants de l\'Université de Toulouse. Offrir à nos commanditaires des solutions sur-mesure portées par la rigueur académique et la passion entrepreneuriale de nos membres.' },
                 { title: 'Notre Vision', description: 'Devenir la référence des Junior-Entreprises tech en France en valorisant l\'excellence de l\'Université de Toulouse. Créer un écosystème où étudiants et entreprises se nourrissent mutuellement pour innover et croître.' },
               ].map((item, i) => (
                 <motion.div key={item.title} variants={fadeInUp} transition={{ delay: i * 0.1 }}
-                  className="py-8" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                  className="py-8" style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}>
                   <h3 className="font-bold mb-3" style={{ fontSize: '1.15rem', color: 'var(--text)' }}>{item.title}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,240,244,0.45)' }}>{item.description}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(28,20,24,0.45)' }}>{item.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -101,7 +101,7 @@ export default function AProposPage() {
       <section className="py-24 lg:py-32 relative overflow-hidden" style={{ background: 'var(--bg-0)' }}>
         {/* Ghost overlay */}
         <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none select-none" aria-hidden>
-          <span className="font-black uppercase leading-none" style={{ fontSize: 'clamp(6rem, 18vw, 20rem)', letterSpacing: '-0.06em', color: 'rgba(255,255,255,0.018)', whiteSpace: 'nowrap' }}>
+          <span className="font-black uppercase leading-none" style={{ fontSize: 'clamp(6rem, 18vw, 20rem)', letterSpacing: '-0.06em', color: 'rgba(28,20,24,0.04)', whiteSpace: 'nowrap' }}>
             Histoire
           </span>
         </div>
@@ -114,22 +114,22 @@ export default function AProposPage() {
                 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', color: 'var(--text)' }}>
                 13 ans d&apos;excellence et d&apos;innovation
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-sm leading-relaxed" style={{ color: 'rgba(240,240,244,0.4)' }}>
+              <motion.p variants={fadeInUp} className="text-sm leading-relaxed" style={{ color: 'rgba(28,20,24,0.4)' }}>
                 De notre création en 2011 à aujourd&apos;hui, retrace notre parcours vers l&apos;excellence.
               </motion.p>
             </motion.div>
 
             <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce} className="lg:w-[64%]">
-              <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+              <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
               {timeline.map((item, i) => (
                 <motion.div key={item.year} variants={fadeInUp} transition={{ delay: i * 0.08 }}
-                  className="group py-7" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                  className="group py-7" style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}>
                   <div className="flex items-baseline gap-5 mb-2">
                     <span className="font-mono text-[11px] shrink-0 tabular-nums font-bold" style={{ color: 'var(--red)' }}>{item.year}</span>
                     <h3 className="font-bold group-hover:translate-x-0.5 transition-transform duration-200"
                       style={{ fontSize: 'clamp(1rem, 1.8vw, 1.3rem)', color: 'var(--text)' }}>{item.title}</h3>
                   </div>
-                  <p className="text-sm leading-relaxed pl-14" style={{ color: 'rgba(240,240,244,0.42)' }}>{item.description}</p>
+                  <p className="text-sm leading-relaxed pl-14" style={{ color: 'rgba(28,20,24,0.42)' }}>{item.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -155,16 +155,16 @@ export default function AProposPage() {
             </motion.div>
 
             <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce} className="lg:w-[64%]">
-              <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+              <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
               {values.map((value, i) => (
                 <motion.div key={value.title} variants={fadeInUp} transition={{ delay: i * 0.08 }}
-                  className="group py-7" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+                  className="group py-7" style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}>
                   <div className="flex items-baseline gap-5 mb-2">
-                    <span className="font-mono text-[11px] shrink-0" style={{ color: 'rgba(240,240,244,0.18)' }}>{String(i+1).padStart(2,'0')}</span>
+                    <span className="font-mono text-[11px] shrink-0" style={{ color: 'rgba(28,20,24,0.18)' }}>{String(i+1).padStart(2,'0')}</span>
                     <h3 className="font-bold group-hover:translate-x-0.5 transition-transform duration-200"
                       style={{ fontSize: 'clamp(1rem, 1.8vw, 1.3rem)', color: 'var(--text)' }}>{value.title}</h3>
                   </div>
-                  <p className="text-sm leading-relaxed pl-9" style={{ color: 'rgba(240,240,244,0.42)' }}>{value.description}</p>
+                  <p className="text-sm leading-relaxed pl-9" style={{ color: 'rgba(28,20,24,0.42)' }}>{value.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -193,7 +193,7 @@ export default function AProposPage() {
             </div>
 
             <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce} className="lg:w-[64%]">
-              <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+              <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
               {[
                 { pole: 'Direction', desc: 'Pilotage stratégique, représentation externe, coordination des pôles.' },
                 { pole: 'Commercial', desc: 'Prospection, devis, gestion de la relation client et des contrats.' },
@@ -203,13 +203,13 @@ export default function AProposPage() {
                 { pole: 'Communication', desc: 'Identité visuelle, réseaux sociaux, événements et partenariats.' },
               ].map((item, i) => (
                 <motion.div key={item.pole} variants={fadeInUp} transition={{ delay: i * 0.07 }}
-                  className="flex items-start gap-5 py-5" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                  <span className="font-mono text-[11px] shrink-0 w-6 tabular-nums" style={{ color: 'rgba(240,240,244,0.18)' }}>
+                  className="flex items-start gap-5 py-5" style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}>
+                  <span className="font-mono text-[11px] shrink-0 w-6 tabular-nums" style={{ color: 'rgba(28,20,24,0.18)' }}>
                     {String(i+1).padStart(2,'0')}
                   </span>
                   <div>
                     <p className="font-bold text-sm mb-0.5" style={{ color: 'var(--text)' }}>Pôle {item.pole}</p>
-                    <p className="text-sm" style={{ color: 'rgba(240,240,244,0.4)' }}>{item.desc}</p>
+                    <p className="text-sm" style={{ color: 'rgba(28,20,24,0.4)' }}>{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -222,3 +222,4 @@ export default function AProposPage() {
     </>
   )
 }
+

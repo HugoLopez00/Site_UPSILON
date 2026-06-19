@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeInUp, viewportOnce } from '@/animations'
@@ -15,7 +15,7 @@ export function Testimonials() {
           style={{
             fontSize: 'clamp(8rem, 22vw, 26rem)',
             letterSpacing: '-0.06em',
-            color: 'rgba(255,255,255,0.022)',
+            color: 'rgba(28,20,24,0.04)',
             marginRight: '-2vw',
           }}
         >
@@ -42,7 +42,7 @@ export function Testimonials() {
             >
               Ce que disent nos clients
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(240,240,244,0.4)' }}>
+            <motion.p variants={fadeInUp} className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(28,20,24,0.4)' }}>
               Plus de 500 missions réalisées. Une note de satisfaction de 9.2/10 auprès de nos commanditaires.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex items-center gap-3">
@@ -51,7 +51,7 @@ export function Testimonials() {
                   <path d="M7 0.5L8.7 5.2H13.7L9.8 8.1L11.3 12.8L7 10L2.7 12.8L4.2 8.1L0.3 5.2H5.3L7 0.5Z"/>
                 </svg>
               ))}
-              <span className="text-[11px] font-bold ml-1" style={{ color: 'rgba(240,240,244,0.4)' }}>9.2 / 10</span>
+              <span className="text-[11px] font-bold ml-1" style={{ color: 'rgba(28,20,24,0.4)' }}>9.2 / 10</span>
             </motion.div>
           </motion.div>
 
@@ -63,14 +63,14 @@ export function Testimonials() {
             viewport={viewportOnce}
             className="lg:w-[64%]"
           >
-            <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+            <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
             {testimonials.map((t, i) => (
               <motion.div
                 key={t.id}
                 variants={fadeInUp}
                 transition={{ delay: i * 0.08 }}
                 className="py-8"
-                style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+                style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}
               >
                 <div className="flex items-start gap-4 mb-4">
                   {/* Avatar */}
@@ -85,7 +85,7 @@ export function Testimonials() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold" style={{ color: 'var(--text)' }}>{t.name}</p>
-                    <p className="text-[11px]" style={{ color: 'rgba(240,240,244,0.36)' }}>
+                    <p className="text-[11px]" style={{ color: 'rgba(28,20,24,0.36)' }}>
                       {t.role} · {t.company}
                     </p>
                   </div>
@@ -98,7 +98,7 @@ export function Testimonials() {
                 </div>
                 <p
                   className="text-sm leading-relaxed pl-14"
-                  style={{ color: 'rgba(240,240,244,0.58)' }}
+                  style={{ color: 'rgba(28,20,24,0.58)' }}
                 >
                   &ldquo;{t.content}&rdquo;
                 </p>
@@ -110,3 +110,4 @@ export function Testimonials() {
     </section>
   )
 }
+

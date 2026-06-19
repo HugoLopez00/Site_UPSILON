@@ -13,30 +13,30 @@
     --mint:       #B1D8D0;
     --sand:       #D2C3AB;
 
-    /* ── Système de couches (Z-depth) ── */
-    --bg-0:       #050508;   /* sol — le plus profond */
-    --bg-1:       #0a0a0f;   /* fond de page */
-    --bg-2:       #111117;   /* surfaces posées */
-    --bg-3:       #18181f;   /* cartes flottantes */
-    --bg-4:       #1f1f28;   /* éléments en avant */
-    --bg-5:       #26262f;   /* tooltips / modales */
+    /* ── Système de couches — MODE CLAIR (charte graphique) ── */
+    --bg-0:       #F5F1EC;   /* fond crème chaud — couleur charte */
+    --bg-1:       #FFFFFF;   /* sections blanches */
+    --bg-2:       #EDE9E4;   /* surfaces secondaires */
+    --bg-3:       #FAFAF8;   /* fonds de cartes */
+    --bg-4:       #1C1418;   /* sections sombres (CTA, footer strip) */
+    --bg-5:       #2D2228;   /* éléments sombres en avant-plan */
 
-    /* ── Bordures directionnelles (lumière du dessus) ── */
-    --border-top:    rgba(255, 255, 255, 0.12);
-    --border-side:   rgba(255, 255, 255, 0.05);
-    --border-bottom: rgba(0, 0, 0, 0.5);
+    /* ── Bordures (mode clair) ── */
+    --border-top:    rgba(255,255,255,0.8);
+    --border-side:   rgba(26,18,24,0.06);
+    --border-bottom: rgba(26,18,24,0.1);
 
     /* ── Texte ── */
-    --text:       #f0f0f4;
-    --text-dim:   rgba(240, 240, 244, 0.6);
-    --text-muted: rgba(240, 240, 244, 0.35);
+    --text:       #1C1418;
+    --text-dim:   rgba(28,20,24,0.62);
+    --text-muted: rgba(28,20,24,0.38);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   body {
-    background-color: var(--bg-1);
+    background-color: var(--bg-0);
     color: var(--text);
     font-family: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -55,88 +55,53 @@
 @layer components {
 
   /* ══════════════════════════════════════════════
-     SYSTÈME DE CARTES AVEC DIMENSION PHYSIQUE
-     Lumière venant du haut → bord haut = clair,
-     bord bas = sombre, ombre projetée en dessous.
+     CARTES — surface blanche sur fond crème
   ══════════════════════════════════════════════ */
 
-  /* Niveau 1 — carte simple, légèrement surélevée */
   .card {
-    background: linear-gradient(160deg, var(--bg-3) 0%, var(--bg-2) 100%);
-    border-top:    1px solid var(--border-top);
-    border-left:   1px solid var(--border-side);
-    border-right:  1px solid var(--border-side);
-    border-bottom: 1px solid var(--border-bottom);
+    background: #FFFFFF;
+    border: 1px solid rgba(28,20,24,0.09);
     border-radius: 16px;
     box-shadow:
-      0 1px 0   rgba(255,255,255,0.04) inset,
-      0 2px 4px   rgba(0,0,0,0.4),
-      0 8px 16px  rgba(0,0,0,0.35),
-      0 20px 40px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+      0 1px 2px rgba(28,20,24,0.04),
+      0 4px 16px rgba(28,20,24,0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
   }
 
-  /* Niveau 2 — carte haute, effet "posée sur la table" */
   .card-elevated {
-    background: linear-gradient(160deg, var(--bg-4) 0%, var(--bg-3) 100%);
-    border-top:    1px solid rgba(255,255,255,0.14);
-    border-left:   1px solid rgba(255,255,255,0.07);
-    border-right:  1px solid rgba(255,255,255,0.04);
-    border-bottom: 1px solid rgba(0,0,0,0.6);
+    background: #FFFFFF;
+    border: 1px solid rgba(28,20,24,0.1);
     border-radius: 20px;
     box-shadow:
-      0 1px 0   rgba(255,255,255,0.06) inset,
-      0 4px 8px   rgba(0,0,0,0.5),
-      0 12px 24px rgba(0,0,0,0.45),
-      0 32px 64px rgba(0,0,0,0.3),
-      0 0 0 1px  rgba(0,0,0,0.4);
+      0 2px 8px rgba(28,20,24,0.06),
+      0 16px 40px rgba(28,20,24,0.08);
   }
 
-  /* Hover lift — carte qui monte vers le spectateur */
-  .card-hover {
-    cursor: pointer;
-  }
+  .card-hover { cursor: pointer; }
   .card-hover:hover {
     transform: translateY(-4px);
-    background: linear-gradient(160deg, var(--bg-4) 0%, var(--bg-3) 100%);
     box-shadow:
-      0 1px 0   rgba(255,255,255,0.07) inset,
-      0 8px 16px  rgba(0,0,0,0.5),
-      0 20px 40px rgba(0,0,0,0.45),
-      0 40px 80px rgba(0,0,0,0.3),
-      0 0 0 1px  rgba(0,0,0,0.5);
+      0 6px 20px rgba(28,20,24,0.1),
+      0 24px 56px rgba(28,20,24,0.08);
   }
 
-  /* Carte avec highlight rouge (sélectionnée / featured) */
   .card-red {
-    background: linear-gradient(160deg, #1a0f0f 0%, #120b0b 100%);
-    border-top:    1px solid rgba(179,44,37,0.35);
-    border-left:   1px solid rgba(179,44,37,0.15);
-    border-right:  1px solid rgba(0,0,0,0.4);
-    border-bottom: 1px solid rgba(0,0,0,0.6);
+    background: var(--red);
+    border: none;
     border-radius: 16px;
-    box-shadow:
-      0 1px 0   rgba(179,44,37,0.15) inset,
-      0 4px 8px   rgba(0,0,0,0.5),
-      0 12px 32px rgba(0,0,0,0.4),
-      0 0 60px   rgba(179,44,37,0.08);
+    box-shadow: 0 4px 20px rgba(179,44,37,0.3);
+    color: #fff;
   }
 
-  /* Inset — effet "creux" (inputs, zones de données) */
   .inset {
-    background: var(--bg-1);
-    border-top:    1px solid rgba(0,0,0,0.5);
-    border-left:   1px solid rgba(0,0,0,0.3);
-    border-right:  1px solid rgba(255,255,255,0.04);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: var(--bg-2);
+    border: 1px solid rgba(28,20,24,0.08);
     border-radius: 12px;
-    box-shadow:
-      0 2px 6px  rgba(0,0,0,0.5) inset,
-      0 8px 24px rgba(0,0,0,0.3) inset;
+    box-shadow: 0 1px 3px rgba(28,20,24,0.05) inset;
   }
 
   /* ══════════════════════════════════════════════
-     BOUTONS PHYSIQUES (pas plats)
+     BOUTONS
   ══════════════════════════════════════════════ */
 
   .btn-red {
@@ -144,79 +109,52 @@
     align-items: center;
     gap: 8px;
     padding: 13px 28px;
-    background: linear-gradient(160deg, var(--red-light) 0%, var(--red) 50%, var(--red-dark) 100%);
+    background: var(--red);
     color: #fff;
     font-family: inherit;
     font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: 0.01em;
     border-radius: 10px;
-    border-top:    1px solid rgba(255,255,255,0.2);
-    border-left:   1px solid rgba(255,255,255,0.1);
-    border-right:  1px solid rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(0,0,0,0.35);
+    border: none;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
     transition: all 0.2s ease;
     box-shadow:
-      0 1px 0 rgba(255,255,255,0.15) inset,
-      0 2px 4px  rgba(0,0,0,0.4),
-      0 6px 12px rgba(179,44,37,0.35),
-      0 12px 24px rgba(179,44,37,0.15);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      0 2px 4px rgba(179,44,37,0.2),
+      0 6px 16px rgba(179,44,37,0.18);
   }
 
   .btn-red:hover {
-    background: linear-gradient(160deg, #D93F38 0%, var(--red-light) 50%, var(--red) 100%);
+    background: var(--red-light);
     transform: translateY(-2px);
     box-shadow:
-      0 1px 0 rgba(255,255,255,0.2) inset,
-      0 4px 8px  rgba(0,0,0,0.5),
-      0 10px 20px rgba(179,44,37,0.45),
-      0 20px 40px rgba(179,44,37,0.2);
+      0 4px 8px rgba(179,44,37,0.28),
+      0 14px 32px rgba(179,44,37,0.22);
   }
 
-  .btn-red:active {
-    transform: translateY(1px);
-    box-shadow:
-      0 0 0 rgba(255,255,255,0.1) inset,
-      0 1px 2px rgba(0,0,0,0.5),
-      0 2px 8px rgba(179,44,37,0.3);
-  }
+  .btn-red:active { transform: translateY(1px); }
 
   .btn-ghost {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 13px 28px;
-    background: linear-gradient(160deg, var(--bg-4) 0%, var(--bg-3) 100%);
-    color: rgba(240,240,244,0.8);
+    background: transparent;
+    color: var(--text);
     font-family: inherit;
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.01em;
     border-radius: 10px;
-    border-top:    1px solid rgba(255,255,255,0.1);
-    border-left:   1px solid rgba(255,255,255,0.07);
-    border-right:  1px solid rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(0,0,0,0.4);
+    border: 1.5px solid rgba(28,20,24,0.2);
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.05) inset,
-      0 2px 4px  rgba(0,0,0,0.4),
-      0 6px 16px rgba(0,0,0,0.25);
   }
 
   .btn-ghost:hover {
-    background: linear-gradient(160deg, var(--bg-5) 0%, var(--bg-4) 100%);
-    color: var(--text);
-    transform: translateY(-2px);
-    box-shadow:
-      0 1px 0 rgba(255,255,255,0.08) inset,
-      0 4px 8px  rgba(0,0,0,0.5),
-      0 12px 24px rgba(0,0,0,0.3);
+    background: rgba(28,20,24,0.05);
+    border-color: rgba(28,20,24,0.32);
+    transform: translateY(-1px);
   }
 
   .btn-ghost:active { transform: translateY(1px); }
@@ -234,13 +172,9 @@
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--red-light);
-    background: linear-gradient(135deg, rgba(179,44,37,0.18) 0%, rgba(140,32,25,0.08) 100%);
-    border-top:    1px solid rgba(179,44,37,0.35);
-    border-bottom: 1px solid rgba(0,0,0,0.3);
-    border-left:   1px solid rgba(179,44,37,0.2);
-    border-right:  1px solid rgba(0,0,0,0.2);
-    box-shadow: 0 2px 8px rgba(179,44,37,0.12), 0 1px 0 rgba(255,255,255,0.04) inset;
+    color: var(--red);
+    background: rgba(179,44,37,0.08);
+    border: 1px solid rgba(179,44,37,0.18);
   }
 
   /* ══════════════════════════════════════════════
@@ -248,17 +182,13 @@
   ══════════════════════════════════════════════ */
   .input-field {
     width: 100%;
-    background: var(--bg-1);
-    border-top:    1px solid rgba(0,0,0,0.5);
-    border-left:   1px solid rgba(0,0,0,0.3);
-    border-right:  1px solid rgba(255,255,255,0.04);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    background: #FFFFFF;
+    border: 1px solid rgba(28,20,24,0.12);
     border-radius: 10px;
     padding: 12px 16px;
     color: var(--text);
     font-family: inherit;
     font-size: 0.875rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.5) inset, 0 1px 0 rgba(255,255,255,0.03) inset;
     transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
   }
@@ -266,23 +196,22 @@
   .input-field::placeholder { color: var(--text-muted); }
 
   .input-field:focus {
-    border-top-color:    rgba(179,44,37,0.4);
-    border-left-color:   rgba(179,44,37,0.25);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.5) inset, 0 0 0 2px rgba(179,44,37,0.15);
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(179,44,37,0.1);
   }
 
   /* ══════════════════════════════════════════════
-     GRILLES DE FOND
+     GRILLES DE FOND — mode clair
   ══════════════════════════════════════════════ */
   .dot-grid {
-    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(28,20,24,0.06) 1px, transparent 1px);
     background-size: 36px 36px;
   }
 
   .perspective-grid {
     background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(28,20,24,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(28,20,24,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     transform: perspective(600px) rotateX(30deg);
     transform-origin: top center;
@@ -299,25 +228,18 @@
   }
 
   .text-gradient-teal {
-    background: linear-gradient(135deg, #6DC3D5 0%, #B1D8D0 100%);
+    background: linear-gradient(135deg, #477181 0%, #6DC3D5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   /* ══════════════════════════════════════════════
-     DIVIDERS AVEC DIMENSION
+     DIVIDERS
   ══════════════════════════════════════════════ */
   .divider-3d {
     height: 1px;
-    background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(255,255,255,0.08) 20%,
-      rgba(255,255,255,0.12) 50%,
-      rgba(255,255,255,0.08) 80%,
-      transparent 100%
-    );
-    box-shadow: 0 1px 0 rgba(0,0,0,0.4);
+    background: rgba(28,20,24,0.08);
   }
 }
 

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -38,7 +38,7 @@ export default function ContactPage() {
       {/* ── HERO ── */}
       <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden pb-16 pt-32" style={{ background: 'var(--bg-0)' }}>
         <div className="absolute inset-0 pointer-events-none select-none" style={{
-          backgroundImage: 'linear-gradient(rgba(255,255,255,0.016) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(28,20,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,20,24,0.05) 1px, transparent 1px)',
           backgroundSize: '64px 64px',
         }} />
         <div className="absolute top-1/3 right-1/3 w-[600px] h-[400px] pointer-events-none" style={{ background: 'radial-gradient(ellipse, rgba(109,195,213,0.05) 0%, transparent 62%)' }} />
@@ -46,7 +46,7 @@ export default function ContactPage() {
 
         <div className="max-w-[1200px] mx-auto px-6 lg:px-14 relative z-10">
           <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-[10px] uppercase tracking-[0.42em] mb-10" style={{ color: 'rgba(240,240,244,0.25)' }}>
+            className="text-[10px] uppercase tracking-[0.42em] mb-10" style={{ color: 'rgba(28,20,24,0.25)' }}>
             UPSILON · Devis gratuit · Réponse sous 48h
           </motion.p>
           {heroWords.map((word, i) => (
@@ -56,14 +56,14 @@ export default function ContactPage() {
                 animate={{ y: 0, skewY: 0 }}
                 transition={{ delay: 0.3 + i * 0.12, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
                 className="block font-black uppercase select-none"
-                style={{ fontSize: 'clamp(3rem, 12vw, 14rem)', lineHeight: 0.88, letterSpacing: '-0.04em', color: i === 1 ? 'var(--teal)' : 'var(--text)' }}
+                style={{ fontSize: 'clamp(3rem, 12vw, 14rem)', lineHeight: 0.88, letterSpacing: '-0.04em', color: i === 1 ? 'var(--steel)' : 'var(--text)' }}
               >
                 {word}
               </motion.span>
             </div>
           ))}
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.7 }}
-            className="text-sm leading-relaxed mt-8 max-w-lg" style={{ color: 'rgba(240,240,244,0.4)' }}>
+            className="text-sm leading-relaxed mt-8 max-w-lg" style={{ color: 'rgba(28,20,24,0.4)' }}>
             Une question, un projet, ou simplement envie d&apos;en savoir plus ? Notre équipe répond sous 48h.
             Le devis est gratuit et sans engagement.
           </motion.p>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   className="flex flex-col items-center justify-center py-20 text-center">
                   <CheckCircle size={56} style={{ color: '#10b981' }} className="mb-6" />
                   <h2 className="text-2xl font-bold mb-3" style={{ color: 'var(--text)' }}>Message envoyé !</h2>
-                  <p className="text-sm max-w-sm leading-relaxed" style={{ color: 'rgba(240,240,244,0.42)' }}>
+                  <p className="text-sm max-w-sm leading-relaxed" style={{ color: 'rgba(28,20,24,0.42)' }}>
                     Merci pour votre message. Notre équipe analyse votre demande et vous répond dans les 48 heures ouvrées.
                   </p>
                 </motion.div>
@@ -96,42 +96,42 @@ export default function ContactPage() {
                   onSubmit={handleSubmit}
                   className="space-y-5"
                 >
-                  <div className="h-px mb-8" style={{ background: 'rgba(255,255,255,0.07)' }} />
+                  <div className="h-px mb-8" style={{ background: 'rgba(28,20,24,0.1)' }} />
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(240,240,244,0.4)' }}>Nom complet *</label>
+                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(28,20,24,0.4)' }}>Nom complet *</label>
                       <input type="text" required value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none"
-                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text)' }}
+                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(28,20,24,0.1)', color: 'var(--text)' }}
                         placeholder="Jean Dupont" />
                     </div>
                     <div>
-                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(240,240,244,0.4)' }}>Email *</label>
+                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(28,20,24,0.4)' }}>Email *</label>
                       <input type="email" required value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none"
-                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text)' }}
+                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(28,20,24,0.1)', color: 'var(--text)' }}
                         placeholder="jean@entreprise.fr" />
                     </div>
                   </div>
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(240,240,244,0.4)' }}>Entreprise</label>
+                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(28,20,24,0.4)' }}>Entreprise</label>
                       <input type="text" value={form.company}
                         onChange={(e) => setForm({ ...form, company: e.target.value })}
                         className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none"
-                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text)' }}
+                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(28,20,24,0.1)', color: 'var(--text)' }}
                         placeholder="Mon Entreprise SAS" />
                     </div>
                     <div>
-                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(240,240,244,0.4)' }}>Service concerné</label>
+                      <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(28,20,24,0.4)' }}>Service concerné</label>
                       <select value={form.service}
                         onChange={(e) => setForm({ ...form, service: e.target.value })}
                         className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none appearance-none"
-                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(255,255,255,0.08)', color: form.service ? 'var(--text)' : 'rgba(240,240,244,0.3)' }}>
+                        style={{ background: 'var(--bg-2)', border: '1px solid rgba(28,20,24,0.1)', color: form.service ? 'var(--text)' : 'rgba(28,20,24,0.3)' }}>
                         <option value="">Sélectionner...</option>
                         {['Logiciels & IT','Marketing & Communication','Construction & Environnement','Chimie & Biotechnologies','Électronique & Mécanique','Autre'].map((s) => (
                           <option key={s} value={s}>{s}</option>
@@ -141,11 +141,11 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(240,240,244,0.4)' }}>Votre message *</label>
+                    <label className="block text-[10px] uppercase tracking-[0.25em] mb-2" style={{ color: 'rgba(28,20,24,0.4)' }}>Votre message *</label>
                     <textarea required rows={5} value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
                       className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none resize-none"
-                      style={{ background: 'var(--bg-2)', border: '1px solid rgba(255,255,255,0.08)', color: 'var(--text)' }}
+                      style={{ background: 'var(--bg-2)', border: '1px solid rgba(28,20,24,0.1)', color: 'var(--text)' }}
                       placeholder="Décrivez votre projet ou votre besoin en quelques lignes..." />
                   </div>
 
@@ -153,7 +153,7 @@ export default function ContactPage() {
                     Envoyer le message <Send size={16} />
                   </button>
 
-                  <p className="text-[11px] text-center" style={{ color: 'rgba(240,240,244,0.25)' }}>
+                  <p className="text-[11px] text-center" style={{ color: 'rgba(28,20,24,0.25)' }}>
                     Réponse garantie sous 48h · Devis gratuit · Sans engagement
                   </p>
                 </motion.form>
@@ -168,21 +168,21 @@ export default function ContactPage() {
               viewport={viewportOnce}
               className="lg:w-[40%] lg:sticky lg:top-24 lg:self-start"
             >
-              <div className="h-px mb-8" style={{ background: 'rgba(255,255,255,0.07)' }} />
+              <div className="h-px mb-8" style={{ background: 'rgba(28,20,24,0.1)' }} />
 
               {/* Stats */}
               <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-3 mb-8">
                 {[{ n: '<48h', label: 'Réponse garantie' }, { n: '100%', label: 'Devis gratuit' }, { n: '9.2/10', label: 'Satisfaction' }, { n: 'NDA', label: 'Confidentialité' }].map((s) => (
-                  <div key={s.label} className="rounded-xl p-4" style={{ background: 'var(--bg-2)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                  <div key={s.label} className="rounded-xl p-4" style={{ background: 'var(--bg-2)', border: '1px solid rgba(28,20,24,0.1)' }}>
                     <p className="font-black tracking-[-0.04em] mb-0.5" style={{ fontSize: '1.5rem', color: 'var(--text)' }}>{s.n}</p>
-                    <p className="text-[10px] uppercase tracking-wide" style={{ color: 'rgba(240,240,244,0.32)' }}>{s.label}</p>
+                    <p className="text-[10px] uppercase tracking-wide" style={{ color: 'rgba(28,20,24,0.32)' }}>{s.label}</p>
                   </div>
                 ))}
               </motion.div>
 
               {/* Contact info */}
               <motion.div variants={fadeInUp}>
-                <p className="text-[10px] uppercase tracking-[0.3em] mb-5" style={{ color: 'rgba(240,240,244,0.25)' }}>Coordonnées</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] mb-5" style={{ color: 'rgba(28,20,24,0.25)' }}>Coordonnées</p>
                 <div className="space-y-5">
                   {contactInfo.map((info) => {
                     const Icon = info.icon
@@ -193,8 +193,8 @@ export default function ContactPage() {
                           <Icon size={14} style={{ color: 'var(--red)' }} />
                         </div>
                         <div>
-                          <p className="text-[10px] uppercase tracking-wide mb-0.5" style={{ color: 'rgba(240,240,244,0.3)' }}>{info.label}</p>
-                          <p className="text-sm leading-snug group-hover:text-white transition-colors" style={{ color: 'rgba(240,240,244,0.65)' }}>{info.value}</p>
+                          <p className="text-[10px] uppercase tracking-wide mb-0.5" style={{ color: 'rgba(28,20,24,0.3)' }}>{info.label}</p>
+                          <p className="text-sm leading-snug group-hover:text-white transition-colors" style={{ color: 'rgba(28,20,24,0.65)' }}>{info.value}</p>
                         </div>
                       </a>
                     )
@@ -210,7 +210,7 @@ export default function ContactPage() {
       <section className="py-24 relative overflow-hidden" style={{ background: 'var(--bg-0)' }}>
         {/* Ghost overlay */}
         <div className="absolute inset-0 flex items-center overflow-hidden pointer-events-none select-none" aria-hidden>
-          <span className="font-black uppercase leading-none" style={{ fontSize: 'clamp(5rem, 15vw, 18rem)', letterSpacing: '-0.06em', color: 'rgba(255,255,255,0.018)', whiteSpace: 'nowrap', marginLeft: '-1vw' }}>
+          <span className="font-black uppercase leading-none" style={{ fontSize: 'clamp(5rem, 15vw, 18rem)', letterSpacing: '-0.06em', color: 'rgba(28,20,24,0.04)', whiteSpace: 'nowrap', marginLeft: '-1vw' }}>
             FAQ
           </span>
         </div>
@@ -226,19 +226,19 @@ export default function ContactPage() {
             </motion.div>
 
             <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportOnce} className="lg:w-[64%]">
-              <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+              <div className="h-px" style={{ background: 'rgba(28,20,24,0.1)' }} />
               {faq.map((item, i) => (
                 <motion.div key={i} variants={fadeInUp}>
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="group w-full flex items-center justify-between py-6 text-left"
-                    style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+                    style={{ borderBottom: '1px solid rgba(28,20,24,0.1)' }}
                   >
-                    <span className="text-sm font-semibold pr-8 group-hover:text-white transition-colors" style={{ color: 'rgba(240,240,244,0.8)' }}>
+                    <span className="text-sm font-semibold pr-8 group-hover:text-white transition-colors" style={{ color: 'rgba(28,20,24,0.8)' }}>
                       {item.question}
                     </span>
                     <ChevronDown size={16} className={`shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180' : ''}`}
-                      style={{ color: 'rgba(240,240,244,0.3)' }} />
+                      style={{ color: 'rgba(28,20,24,0.3)' }} />
                   </button>
                   {openFaq === i && (
                     <motion.div
@@ -247,7 +247,7 @@ export default function ContactPage() {
                       transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
                       className="pb-6"
                     >
-                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,240,244,0.48)' }}>{item.answer}</p>
+                      <p className="text-sm leading-relaxed" style={{ color: 'rgba(28,20,24,0.48)' }}>{item.answer}</p>
                     </motion.div>
                   )}
                 </motion.div>
@@ -259,3 +259,5 @@ export default function ContactPage() {
     </>
   )
 }
+
+

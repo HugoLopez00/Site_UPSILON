@@ -52,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="bg-[#07070a] text-[#f5f5f7] antialiased">
+      <body className="bg-[#F5F1EC] text-[#1C1418] antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

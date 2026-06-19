@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
@@ -26,7 +26,7 @@ export function Hero() {
         className="absolute inset-0 pointer-events-none select-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.016) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.016) 1px, transparent 1px)',
+            'linear-gradient(rgba(28,20,24,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(28,20,24,0.05) 1px, transparent 1px)',
           backgroundSize: '64px 64px',
         }}
       />
@@ -53,7 +53,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
               className="text-[10px] uppercase tracking-[0.42em] mb-10"
-              style={{ color: 'rgba(240,240,244,0.26)' }}
+              style={{ color: 'rgba(28,20,24,0.26)' }}
             >
               Junior-Entreprise · Université de Toulouse · Depuis 2011
             </motion.p>
@@ -91,14 +91,14 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 pt-6"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
+          style={{ borderTop: '1px solid rgba(28,20,24,0.08)' }}
         >
           {/* Left: info */}
           <div className="space-y-1">
-            <p className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(240,240,244,0.2)' }}>
+            <p className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(28,20,24,0.2)' }}>
               Université Paul Sabatier · Toulouse, France
             </p>
-            <p className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(240,240,244,0.2)' }}>
+            <p className="text-[10px] uppercase tracking-widest" style={{ color: 'rgba(28,20,24,0.2)' }}>
               contact@upsilon-toulouse.fr
             </p>
           </div>
@@ -112,11 +112,11 @@ export function Hero() {
                 minWidth: '132px',
                 minHeight: '86px',
                 background: 'var(--bg-3)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.35)',
+                border: '1px solid rgba(28,20,24,0.1)',
+                boxShadow: '0 4px 20px rgba(28,20,24,0.12)',
               }}
             >
-              <span className="text-[9px] uppercase tracking-[0.28em] block" style={{ color: 'rgba(240,240,244,0.28)' }}>
+              <span className="text-[9px] uppercase tracking-[0.28em] block" style={{ color: 'rgba(28,20,24,0.28)' }}>
                 Découvrir
               </span>
               <span
@@ -150,3 +150,5 @@ export function Hero() {
     </section>
   )
 }
+
+

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
@@ -69,10 +69,10 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
-            ? 'backdrop-blur-xl border-b border-white/[0.06] py-3'
+            ? 'backdrop-blur-xl border-b border-black/[0.07] py-3'
             : 'py-5'
         )}
-        style={{ background: scrolled ? 'rgba(5,5,8,0.86)' : 'rgba(5,5,8,0)' }}
+        style={{ background: scrolled ? 'rgba(245,241,236,0.96)' : 'rgba(245,241,236,0)' }}
       >
         <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
@@ -101,8 +101,8 @@ export function Navbar() {
                     className={cn(
                       'flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
                       dropdownOpen
-                        ? 'text-[#f5f5f7] bg-white/[0.06]'
-                        : 'text-[rgba(245,245,247,0.7)] hover:text-[#f5f5f7] hover:bg-white/[0.04]'
+                        ? 'text-[#1C1418] bg-black/[0.06]'
+                        : 'text-[rgba(28,20,24,0.62)] hover:text-[#1C1418] hover:bg-black/[0.05]'
                     )}
                   >
                     {item.label}
@@ -121,27 +121,27 @@ export function Navbar() {
                         transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                         className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 rounded-2xl p-2"
                         style={{
-                          background: 'var(--bg-2)',
-                          border: '1px solid rgba(255,255,255,0.07)',
-                          boxShadow: '0 24px 64px rgba(0,0,0,0.6)',
+                          background: '#FFFFFF',
+                          border: '1px solid rgba(28,20,24,0.09)',
+                          boxShadow: '0 8px 40px rgba(28,20,24,0.14)',
                         }}
                       >
                         {services.map((s) => (
                           <Link
                             key={s.href}
                             href={s.href}
-                            className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/[0.05] transition-colors group"
+                            className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-black/[0.04] transition-colors group"
                           >
                             <span className="text-xl w-8 text-center">{s.icon}</span>
-                            <span className="text-sm font-medium text-[rgba(245,245,247,0.8)] group-hover:text-[#f5f5f7] transition-colors">
+                            <span className="text-sm font-medium text-[rgba(28,20,24,0.72)] group-hover:text-[#1C1418] transition-colors">
                               {s.label}
                             </span>
                           </Link>
                         ))}
-                        <div className="mx-4 my-2 h-px bg-white/[0.06]" />
+                        <div className="mx-4 my-2 h-px bg-black/[0.07]" />
                         <Link
                           href="/services"
-                          className="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-white/[0.05] transition-colors group"
+                          className="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-black/[0.04] transition-colors group"
                         >
                           <span className="text-sm font-semibold text-[#B32C25]">Voir tous les services</span>
                           <ArrowRight size={14} className="text-[#B32C25] group-hover:translate-x-1 transition-transform" />
@@ -157,8 +157,8 @@ export function Navbar() {
                   className={cn(
                     'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
                     pathname === item.href
-                      ? 'text-[#f5f5f7] bg-white/[0.06]'
-                      : 'text-[rgba(245,245,247,0.7)] hover:text-[#f5f5f7] hover:bg-white/[0.04]'
+                      ? 'text-[#1C1418] bg-black/[0.06]'
+                      : 'text-[rgba(28,20,24,0.62)] hover:text-[#1C1418] hover:bg-black/[0.05]'
                   )}
                 >
                   {item.label}
@@ -177,7 +177,7 @@ export function Navbar() {
           {/* Mobile burger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-[rgba(245,245,247,0.7)] hover:text-[#f5f5f7] hover:bg-white/[0.06] transition-colors"
+            className="lg:hidden p-2 rounded-lg text-[rgba(28,20,24,0.62)] hover:text-[#1C1418] hover:bg-black/[0.05] transition-colors"
             aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -193,7 +193,8 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#07070a] flex flex-col pt-24 px-6 pb-10 overflow-y-auto"
+            className="fixed inset-0 z-40 flex flex-col pt-24 px-6 pb-10 overflow-y-auto"
+            style={{ background: '#F5F1EC' }}
           >
             <nav className="flex flex-col gap-1">
               {nav.map((item, i) => (
@@ -205,7 +206,7 @@ export function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="block py-4 text-xl font-semibold text-[rgba(245,245,247,0.8)] hover:text-[#f5f5f7] border-b border-white/[0.06] transition-colors"
+                    className="block py-4 text-xl font-semibold text-[rgba(28,20,24,0.75)] hover:text-[#1C1418] border-b border-black/[0.08] transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -223,12 +224,12 @@ export function Navbar() {
                 Demander un devis
                 <ArrowRight size={18} />
               </Link>
-              <div className="mt-6 flex items-center gap-4 text-sm text-[rgba(245,245,247,0.4)]">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f5f5f7] transition-colors">LinkedIn</a>
+              <div className="mt-6 flex items-center gap-4 text-sm text-[rgba(28,20,24,0.45)]">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#1C1418] transition-colors">LinkedIn</a>
                 <span>·</span>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f5f5f7] transition-colors">Twitter</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#1C1418] transition-colors">Twitter</a>
                 <span>·</span>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f5f5f7] transition-colors">Instagram</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#1C1418] transition-colors">Instagram</a>
               </div>
             </motion.div>
           </motion.div>

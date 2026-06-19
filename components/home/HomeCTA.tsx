@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -54,9 +54,9 @@ export function HomeCTA() {
           viewport={viewportOnce}
           transition={{ delay: 0.5, duration: 0.7 }}
           className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6"
-          style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '24px' }}
+          style={{ borderTop: '1px solid rgba(28,20,24,0.08)', paddingTop: '24px' }}
         >
-          <p className="text-[10px] uppercase tracking-widest max-w-xs" style={{ color: 'rgba(240,240,244,0.22)' }}>
+          <p className="text-[10px] uppercase tracking-widest max-w-xs" style={{ color: 'rgba(28,20,24,0.22)' }}>
             Devis gratuit · Sans engagement · Réponse sous 48h
           </p>
 
@@ -85,11 +85,11 @@ export function HomeCTA() {
                 minWidth: '148px',
                 minHeight: '86px',
                 background: 'var(--bg-3)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.35)',
+                border: '1px solid rgba(28,20,24,0.1)',
+                boxShadow: '0 4px 20px rgba(28,20,24,0.12)',
               }}
             >
-              <span className="text-[9px] uppercase tracking-[0.28em] block" style={{ color: 'rgba(240,240,244,0.28)' }}>
+              <span className="text-[9px] uppercase tracking-[0.28em] block" style={{ color: 'rgba(28,20,24,0.28)' }}>
                 Portfolio
               </span>
               <span
@@ -105,3 +105,5 @@ export function HomeCTA() {
     </section>
   )
 }
+
+

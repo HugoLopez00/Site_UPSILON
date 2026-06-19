@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { clients } from '@/lib/data/testimonials'
@@ -9,8 +9,8 @@ export function Clients() {
       className="overflow-hidden relative"
       style={{
         background: 'var(--bg-1)',
-        borderTop: '1px solid rgba(255,255,255,0.05)',
-        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        borderTop: '1px solid rgba(28,20,24,0.08)',
+        borderBottom: '1px solid rgba(28,20,24,0.08)',
         padding: '20px 0',
       }}
     >
@@ -36,14 +36,15 @@ export function Clients() {
           >
             <span
               className="text-[11px] font-bold uppercase tracking-[0.3em]"
-              style={{ color: 'rgba(240,240,244,0.22)' }}
+              style={{ color: 'rgba(28,20,24,0.22)' }}
             >
               {client}
             </span>
-            <span className="ml-12 text-[10px]" style={{ color: 'rgba(240,240,244,0.08)' }}>·</span>
+            <span className="ml-12 text-[10px]" style={{ color: 'rgba(28,20,24,0.08)' }}>·</span>
           </span>
         ))}
       </motion.div>
     </section>
   )
 }
+

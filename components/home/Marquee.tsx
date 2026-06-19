@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 
@@ -13,8 +13,8 @@ export function Marquee() {
       className="overflow-hidden relative"
       style={{
         background: 'var(--bg-1)',
-        borderTop: '1px solid rgba(255,255,255,0.05)',
-        borderBottom: '1px solid rgba(255,255,255,0.05)',
+        borderTop: '1px solid rgba(28,20,24,0.08)',
+        borderBottom: '1px solid rgba(28,20,24,0.08)',
         padding: '18px 0',
       }}
     >
@@ -31,14 +31,15 @@ export function Marquee() {
           >
             <span
               className="text-[11px] font-bold uppercase tracking-[0.28em]"
-              style={{ color: i % 5 === 0 ? 'var(--red)' : 'rgba(240,240,244,0.22)' }}
+              style={{ color: i % 5 === 0 ? 'var(--red)' : 'rgba(28,20,24,0.22)' }}
             >
               {item}
             </span>
-            <span style={{ color: 'rgba(240,240,244,0.1)', fontSize: '14px' }}>—</span>
+            <span style={{ color: 'rgba(28,20,24,0.1)', fontSize: '14px' }}>—</span>
           </span>
         ))}
       </motion.div>
     </section>
   )
 }
+
