@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -45,7 +45,7 @@ const values = [
     icon: Target,
     title: 'Excellence',
     description: 'Chaque mission est réalisée avec le même niveau d\'exigence qu\'un cabinet de conseil professionnel. Notre pôle qualité veille à chaque étape.',
-    color: '#c41e3a',
+    color: '#B32C25',
   },
   {
     icon: Heart,
@@ -73,7 +73,7 @@ export default function AProposPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-[#07070a] relative overflow-hidden">
         <div className="line-grid absolute inset-0 opacity-30" />
-        <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#c41e3a] opacity-[0.04] blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-[#B32C25] opacity-[0.04] blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 relative">
           <motion.div
@@ -108,7 +108,7 @@ export default function AProposPage() {
               viewport={viewportOnce}
               className="glass rounded-2xl p-8 relative overflow-hidden"
             >
-              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c41e3a] to-transparent" />
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#B32C25] to-transparent" />
               <div className="text-3xl mb-4">🎯</div>
               <h2 className="text-xl font-bold text-[#f5f5f7] mb-3">Notre Mission</h2>
               <p className="text-sm text-[rgba(245,245,247,0.6)] leading-relaxed">
@@ -160,7 +160,7 @@ export default function AProposPage() {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#c41e3a]/50 via-white/[0.06] to-transparent" />
+            <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#B32C25]/50 via-white/[0.06] to-transparent" />
 
             <div className="space-y-8">
               {timeline.map((item, i) => (
@@ -178,7 +178,7 @@ export default function AProposPage() {
                     <div className="glass rounded-2xl p-6 group hover:border-white/[0.12] transition-colors">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="text-2xl">{item.icon}</span>
-                        <span className="text-xs font-bold text-[#c41e3a] uppercase tracking-widest">{item.year}</span>
+                        <span className="text-xs font-bold text-[#B32C25] uppercase tracking-widest">{item.year}</span>
                       </div>
                       <h3 className="text-base font-bold text-[#f5f5f7] mb-2">{item.title}</h3>
                       <p className="text-sm text-[rgba(245,245,247,0.55)] leading-relaxed">{item.description}</p>
@@ -186,7 +186,7 @@ export default function AProposPage() {
                   </div>
 
                   {/* Center dot */}
-                  <div className="absolute left-8 lg:left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#c41e3a] border-2 border-[#07070a] z-10" />
+                  <div className="absolute left-8 lg:left-1/2 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#B32C25] border-2 border-[#07070a] z-10" />
 
                   {/* Spacer for alternating layout */}
                   <div className="hidden lg:block flex-1" />

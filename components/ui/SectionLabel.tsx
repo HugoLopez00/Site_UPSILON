@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+﻿import { cn } from '@/lib/utils'
 
 interface SectionLabelProps {
   children: React.ReactNode
@@ -8,7 +8,7 @@ interface SectionLabelProps {
 export function SectionLabel({ children, className }: SectionLabelProps) {
   return (
     <div className={cn('badge mb-6', className)}>
-      <span className="w-1.5 h-1.5 rounded-full bg-[#c41e3a] animate-pulse" />
+      <span className="w-1.5 h-1.5 rounded-full bg-[#B32C25] animate-pulse" />
       {children}
     </div>
   )

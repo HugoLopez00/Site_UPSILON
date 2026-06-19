@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -91,7 +91,7 @@ export default function RecrutementPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-[#07070a] relative overflow-hidden">
         <div className="line-grid absolute inset-0 opacity-30" />
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-[#c41e3a] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[300px] bg-[#B32C25] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 relative">
           <motion.div
@@ -185,17 +185,17 @@ export default function RecrutementPage() {
                 onClick={() => document.getElementById('apply')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 rounded-full bg-[#c41e3a] animate-pulse" />
+                  <div className="w-2 h-2 rounded-full bg-[#B32C25] animate-pulse" />
                   <span className="text-sm font-semibold text-[#f5f5f7]">{role.role}</span>
                 </div>
                 <div className="flex items-center gap-3 ml-6 sm:ml-0">
                   <span className="text-xs px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.06] text-[rgba(245,245,247,0.5)]">
                     Pôle {role.pole}
                   </span>
-                  <span className="text-xs px-2.5 py-1 rounded-lg bg-[rgba(196,30,58,0.1)] border border-[rgba(196,30,58,0.2)] text-[#c41e3a] font-medium">
+                  <span className="text-xs px-2.5 py-1 rounded-lg bg-[rgba(196,30,58,0.1)] border border-[rgba(196,30,58,0.2)] text-[#B32C25] font-medium">
                     {role.type}
                   </span>
-                  <ArrowRight size={14} className="text-[rgba(245,245,247,0.3)] group-hover:text-[#c41e3a] group-hover:translate-x-1 transition-all" />
+                  <ArrowRight size={14} className="text-[rgba(245,245,247,0.3)] group-hover:text-[#B32C25] group-hover:translate-x-1 transition-all" />
                 </div>
               </motion.div>
             ))}
@@ -235,7 +235,7 @@ export default function RecrutementPage() {
                 <div className="text-4xl font-black text-[rgba(245,245,247,0.06)] font-mono mb-4">{step.number}</div>
                 <h3 className="text-sm font-bold text-[#f5f5f7] mb-2">{step.title}</h3>
                 <p className="text-xs text-[rgba(245,245,247,0.5)] leading-relaxed mb-4">{step.description}</p>
-                <span className="text-[10px] font-bold text-[#c41e3a] uppercase tracking-wider">{step.duration}</span>
+                <span className="text-[10px] font-bold text-[#B32C25] uppercase tracking-wider">{step.duration}</span>
               </motion.div>
             ))}
           </div>
@@ -245,7 +245,7 @@ export default function RecrutementPage() {
       {/* Application form */}
       <section id="apply" className="py-24 bg-[#07070a] relative overflow-hidden scroll-mt-20">
         <div className="line-grid absolute inset-0 opacity-20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#c41e3a] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#B32C25] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-[700px] mx-auto px-6 relative">
           <motion.div

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Conditions Générales d\'Utilisation',
@@ -70,7 +70,7 @@ export default function CguPage() {
                 'Reproduire le contenu du site sans autorisation préalable',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="text-[#c41e3a] mt-1">→</span>
+                  <span className="text-[#B32C25] mt-1">→</span>
                   {item}
                 </li>
               ))}
@@ -112,7 +112,7 @@ export default function CguPage() {
           <div className="glass rounded-xl p-5 border border-white/[0.06]">
             <p className="text-xs text-[rgba(245,245,247,0.5)]">
               Pour toute question relative aux CGU, contactez-nous à{' '}
-              <span className="text-[#c41e3a]">contact@upsilon-toulouse.fr</span>
+              <span className="text-[#B32C25]">contact@upsilon-toulouse.fr</span>
             </p>
           </div>
         </div>

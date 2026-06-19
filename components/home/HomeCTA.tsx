@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ export function HomeCTA() {
     <section className="py-24 lg:py-32 bg-[#0d0d12] relative overflow-hidden">
       {/* Background effect */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#c41e3a] opacity-[0.05] blur-[100px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#B32C25] opacity-[0.05] blur-[100px] rounded-full" />
       </div>
       <div className="line-grid absolute inset-0 opacity-20" />
 
@@ -23,7 +23,7 @@ export function HomeCTA() {
         >
           <motion.div variants={fadeInUp} className="mb-6">
             <span className="badge">
-              <Zap size={10} className="fill-[#c41e3a]" />
+              <Zap size={10} className="fill-[#B32C25]" />
               Réponse sous 48h
             </span>
           </motion.div>

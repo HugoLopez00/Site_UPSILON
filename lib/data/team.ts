@@ -1,4 +1,4 @@
-export interface TeamMember {
+﻿export interface TeamMember {
   id: string
   name: string
   role: string
@@ -22,7 +22,7 @@ export const team: TeamMember[] = [
     linkedin: '#',
     avatar: '',
     initials: 'AM',
-    color: '#c41e3a',
+    color: '#B32C25',
   },
   {
     id: '2',

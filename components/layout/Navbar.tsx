@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
@@ -76,7 +76,7 @@ export function Navbar() {
         <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#c41e3a] to-[#9b1830] flex items-center justify-center text-white font-bold text-lg shadow-red-glow group-hover:shadow-[0_0_20px_rgba(196,30,58,0.6)] transition-shadow duration-300">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#B32C25] to-[#8C2019] flex items-center justify-center text-white font-bold text-lg shadow-red-glow group-hover:shadow-[0_0_20px_rgba(196,30,58,0.6)] transition-shadow duration-300">
               Υ
             </div>
             <span className="font-bold text-lg tracking-tight text-[#f5f5f7]">
@@ -131,8 +131,8 @@ export function Navbar() {
                           href="/services"
                           className="flex items-center justify-between px-4 py-3 rounded-xl hover:bg-white/[0.05] transition-colors group"
                         >
-                          <span className="text-sm font-semibold text-[#c41e3a]">Voir tous les services</span>
-                          <ArrowRight size={14} className="text-[#c41e3a] group-hover:translate-x-1 transition-transform" />
+                          <span className="text-sm font-semibold text-[#B32C25]">Voir tous les services</span>
+                          <ArrowRight size={14} className="text-[#B32C25] group-hover:translate-x-1 transition-transform" />
                         </Link>
                       </motion.div>
                     )}

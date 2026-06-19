@@ -4,75 +4,67 @@
 
 @layer base {
   :root {
-    --upsilon-red: #c41e3a;
-    --upsilon-red-light: #e02d4e;
-    --upsilon-red-dark: #9b1830;
-    --bg: #07070a;
-    --bg-surface: #0d0d12;
-    --bg-elevated: #141419;
-    --border: rgba(255, 255, 255, 0.06);
+    /* ── Palette officielle charte graphique Upsilon ── */
+    --red:        #B32C25;
+    --red-light:  #CC3830;
+    --red-dark:   #8C2019;
+    --slate:      #4B474E;
+    --steel:      #477181;
+    --gray:       #8E9599;
+    --teal:       #6DC3D5;
+    --sand:       #D2C3AB;
+    --mint:       #B1D8D0;
+    --cream:      #FEF7EE;
+
+    /* ── Fonds UI sombres ── */
+    --bg:         #07070a;
+    --bg-surface: #0e0e12;
+    --bg-elevated:#16161c;
+    --border:     rgba(255, 255, 255, 0.06);
     --border-hover: rgba(255, 255, 255, 0.12);
-    --text-primary: #f5f5f7;
-    --text-secondary: rgba(245, 245, 247, 0.7);
+
+    /* ── Texte ── */
+    --text:       #f5f5f7;
+    --text-dim:   rgba(245, 245, 247, 0.65);
     --text-muted: rgba(245, 245, 247, 0.4);
-    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html {
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   body {
     background-color: var(--bg);
-    color: var(--text-primary);
-    font-family: var(--font-inter);
+    color: var(--text);
+    /* Police officielle Upsilon : Helvetica */
+    font-family: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
     overflow-x: hidden;
   }
 
-  ::selection {
-    background: var(--upsilon-red);
-    color: #fff;
-  }
+  ::selection { background: var(--red); color: #fff; }
 
   :focus-visible {
-    outline: 2px solid var(--upsilon-red);
+    outline: 2px solid var(--red);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  img {
-    max-width: 100%;
-    display: block;
-  }
-
-  ul {
-    list-style: none;
-  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  ul { list-style: none; }
 }
 
 @layer components {
-  /* Glass card */
+  /* ── Glassmorphism ── */
   .glass {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.04);
   }
 
   .glass-hover {
@@ -82,137 +74,149 @@
   .glass-hover:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.07);
   }
 
-  /* Gradient text */
+  /* ── Dégradé texte rouge (gradient Upsilon) ── */
   .text-gradient {
-    background: linear-gradient(135deg, #c41e3a 0%, #e02d4e 50%, #c41e3a 100%);
+    background: linear-gradient(135deg, #CC3830 0%, #B32C25 40%, #8C2019 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: shimmer 4s linear infinite;
   }
 
-  .text-gradient-white {
-    background: linear-gradient(135deg, #f5f5f7 0%, rgba(245, 245, 247, 0.7) 100%);
+  /* ── Dégradé texte teal ── */
+  .text-gradient-teal {
+    background: linear-gradient(135deg, #6DC3D5 0%, #477181 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Red glow */
-  .red-glow {
-    box-shadow: 0 0 60px rgba(196, 30, 58, 0.25), 0 0 120px rgba(196, 30, 58, 0.1);
-  }
-
-  /* Section */
-  .section {
-    padding: 6rem 0;
-  }
-
-  /* Dot grid background */
-  .dot-grid {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  /* Line grid */
-  .line-grid {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-
-  /* Noise overlay */
-  .noise::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-    pointer-events: none;
-    border-radius: inherit;
-  }
-
-  /* Badge */
+  /* ── Badge rouge Upsilon ── */
   .badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 4px 12px;
     border-radius: 100px;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    border: 1px solid rgba(196, 30, 58, 0.4);
-    color: var(--upsilon-red);
-    background: rgba(196, 30, 58, 0.08);
+    border: 1px solid rgba(179, 44, 37, 0.4);
+    color: var(--red);
+    background: rgba(179, 44, 37, 0.08);
   }
 
-  /* Red button */
+  /* ── Grilles de fond ── */
+  .dot-grid {
+    background-image: radial-gradient(rgba(255,255,255,0.055) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .line-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  /* ── Motif diagonal (rappel du logo Upsilon) ── */
+  .diagonal-pattern {
+    background-image: repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 14px,
+      rgba(255,255,255,0.03) 14px,
+      rgba(255,255,255,0.03) 15px
+    );
+  }
+
+  /* ── Bouton rouge primaire ── */
   .btn-red {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 13px 28px;
-    background: var(--upsilon-red);
+    padding: 12px 26px;
+    background: var(--red);
     color: #fff;
-    font-size: 0.9rem;
+    font-family: inherit;
+    font-size: 0.875rem;
     font-weight: 600;
     border-radius: 8px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.08);
     transition: all 0.25s ease;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    letter-spacing: 0.01em;
   }
 
   .btn-red::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 100%);
     opacity: 0;
     transition: opacity 0.25s;
   }
 
   .btn-red:hover {
-    background: var(--upsilon-red-light);
-    box-shadow: 0 8px 24px rgba(196, 30, 58, 0.4);
+    background: var(--red-light);
+    box-shadow: 0 8px 24px rgba(179, 44, 37, 0.4);
     transform: translateY(-1px);
   }
 
-  .btn-red:hover::before {
-    opacity: 1;
-  }
+  .btn-red:hover::before { opacity: 1; }
+  .btn-red:active { transform: translateY(0); }
 
-  .btn-red:active {
-    transform: translateY(0);
-  }
-
-  /* Ghost button */
+  /* ── Bouton ghost (secondaire) ── */
   .btn-ghost {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 13px 28px;
+    padding: 12px 26px;
     background: transparent;
-    color: rgba(245, 245, 247, 0.8);
-    font-size: 0.9rem;
+    color: rgba(245,245,247,0.75);
+    font-family: inherit;
+    font-size: 0.875rem;
     font-weight: 500;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.25s ease;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text);
+  }
+
+  /* ── Bouton teal (accentuation Upsilon) ── */
+  .btn-teal {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 26px;
+    background: rgba(109, 195, 213, 0.12);
+    color: #6DC3D5;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid rgba(109, 195, 213, 0.25);
     transition: all 0.25s ease;
     cursor: pointer;
   }
 
-  .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: var(--text-primary);
+  .btn-teal:hover {
+    background: rgba(109, 195, 213, 0.2);
+    border-color: rgba(109, 195, 213, 0.4);
+    box-shadow: 0 0 24px rgba(109, 195, 213, 0.15);
   }
 }
 
@@ -221,29 +225,14 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
 }
 
-/* Smooth scroll progress bar */
 @keyframes shimmer {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
 }
-
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-16px); }
-}
-
-@keyframes spin-slow {
-  to { transform: rotate(360deg); }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
 }

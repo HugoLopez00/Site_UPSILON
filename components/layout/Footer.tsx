@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { ArrowUpRight, Mail, Phone, MapPin } from 'lucide-react'
 
 const footerNav = {
@@ -39,7 +39,7 @@ export function Footer() {
           {/* Brand col */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 w-fit group mb-6">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#c41e3a] to-[#9b1830] flex items-center justify-center text-white font-bold text-xl shadow-red-glow">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#B32C25] to-[#8C2019] flex items-center justify-center text-white font-bold text-xl shadow-red-glow">
                 Υ
               </div>
               <span className="font-bold text-xl tracking-tight text-[#f5f5f7]">UPSILON</span>
@@ -49,12 +49,12 @@ export function Footer() {
               en technologie depuis 2011.
             </p>
             <div className="space-y-3">
-              <a href="mailto:contact@upsilon-toulouse.fr" className="flex items-center gap-3 text-sm text-[rgba(245,245,247,0.5)] hover:text-[#c41e3a] transition-colors group">
-                <Mail size={14} className="text-[rgba(245,245,247,0.3)] group-hover:text-[#c41e3a] transition-colors" />
+              <a href="mailto:contact@upsilon-toulouse.fr" className="flex items-center gap-3 text-sm text-[rgba(245,245,247,0.5)] hover:text-[#B32C25] transition-colors group">
+                <Mail size={14} className="text-[rgba(245,245,247,0.3)] group-hover:text-[#B32C25] transition-colors" />
                 contact@upsilon-toulouse.fr
               </a>
-              <a href="tel:+33561558393" className="flex items-center gap-3 text-sm text-[rgba(245,245,247,0.5)] hover:text-[#c41e3a] transition-colors group">
-                <Phone size={14} className="text-[rgba(245,245,247,0.3)] group-hover:text-[#c41e3a] transition-colors" />
+              <a href="tel:+33561558393" className="flex items-center gap-3 text-sm text-[rgba(245,245,247,0.5)] hover:text-[#B32C25] transition-colors group">
+                <Phone size={14} className="text-[rgba(245,245,247,0.3)] group-hover:text-[#B32C25] transition-colors" />
                 +33 (0)5 61 55 83 93
               </a>
               <div className="flex items-start gap-3 text-sm text-[rgba(245,245,247,0.5)]">

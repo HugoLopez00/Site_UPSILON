@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Mentions légales',
@@ -35,7 +35,7 @@ export default function MentionsLegalesPage() {
             <p>Ce site est hébergé par :</p>
             <p><strong className="text-[rgba(245,245,247,0.85)]">Vercel Inc.</strong></p>
             <p>340 Pine Street, Suite 701, San Francisco, CA 94104, États-Unis</p>
-            <p>Site web : <span className="text-[#c41e3a]">vercel.com</span></p>
+            <p>Site web : <span className="text-[#B32C25]">vercel.com</span></p>
           </section>
 
           <div className="h-px bg-white/[0.06]" />

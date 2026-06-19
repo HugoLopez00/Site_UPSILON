@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeInUp, fadeInLeft, fadeInRight, viewportOnce } from '@/animations'
@@ -107,7 +107,7 @@ export function Process() {
                 </div>
 
                 {/* Step indicator */}
-                <div className="hidden lg:flex items-center justify-center w-8 h-8 rounded-full border border-[#c41e3a]/30 text-[#c41e3a] shrink-0">
+                <div className="hidden lg:flex items-center justify-center w-8 h-8 rounded-full border border-[#B32C25]/30 text-[#B32C25] shrink-0">
                   <span className="text-xs font-bold">{parseInt(step.number)}</span>
                 </div>
               </div>

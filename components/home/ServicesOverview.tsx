@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -82,7 +82,7 @@ export function ServicesOverview() {
                   </div>
 
                   {/* CTA */}
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#c41e3a] group-hover:gap-2.5 transition-all">
+                  <div className="flex items-center gap-1.5 text-xs font-semibold text-[#B32C25] group-hover:gap-2.5 transition-all">
                     En savoir plus
                     <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
                   </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Politique de confidentialité',
@@ -19,7 +19,7 @@ export default function PolitiqueConfidentialitePage() {
               Bâtiment Louis Lareng, 118 Route de Narbonne, 31062 Toulouse CEDEX 9, est responsable
               du traitement des données personnelles collectées via ce site.
             </p>
-            <p className="mt-2">Contact DPO : <span className="text-[#c41e3a]">contact@upsilon-toulouse.fr</span></p>
+            <p className="mt-2">Contact DPO : <span className="text-[#B32C25]">contact@upsilon-toulouse.fr</span></p>
           </section>
 
           <div className="h-px bg-white/[0.06]" />
@@ -28,9 +28,9 @@ export default function PolitiqueConfidentialitePage() {
             <h2 className="text-base font-bold text-[#f5f5f7] mb-3">2. Données collectées</h2>
             <p className="mb-3">Nous collectons les données suivantes :</p>
             <ul className="space-y-2 ml-4">
-              <li className="flex items-start gap-2"><span className="text-[#c41e3a] mt-1">→</span>Via le formulaire de contact : nom, email, société, message</li>
-              <li className="flex items-start gap-2"><span className="text-[#c41e3a] mt-1">→</span>Via le formulaire de recrutement : nom, email, école, année, lettre de motivation</li>
-              <li className="flex items-start gap-2"><span className="text-[#c41e3a] mt-1">→</span>Données de navigation : adresse IP, pages visitées, durée de visite (via cookies analytiques)</li>
+              <li className="flex items-start gap-2"><span className="text-[#B32C25] mt-1">→</span>Via le formulaire de contact : nom, email, société, message</li>
+              <li className="flex items-start gap-2"><span className="text-[#B32C25] mt-1">→</span>Via le formulaire de recrutement : nom, email, école, année, lettre de motivation</li>
+              <li className="flex items-start gap-2"><span className="text-[#B32C25] mt-1">→</span>Données de navigation : adresse IP, pages visitées, durée de visite (via cookies analytiques)</li>
             </ul>
           </section>
 
@@ -47,7 +47,7 @@ export default function PolitiqueConfidentialitePage() {
               ].map((row) => (
                 <div key={row.finalite} className="flex items-start justify-between gap-4 border-b border-white/[0.06] pb-3 last:border-0 last:pb-0">
                   <span>{row.finalite}</span>
-                  <span className="text-[11px] shrink-0 px-2 py-0.5 rounded-md bg-[rgba(196,30,58,0.1)] border border-[rgba(196,30,58,0.2)] text-[#c41e3a]">{row.base}</span>
+                  <span className="text-[11px] shrink-0 px-2 py-0.5 rounded-md bg-[rgba(196,30,58,0.1)] border border-[rgba(196,30,58,0.2)] text-[#B32C25]">{row.base}</span>
                 </div>
               ))}
             </div>
@@ -71,16 +71,16 @@ export default function PolitiqueConfidentialitePage() {
             <div className="grid sm:grid-cols-2 gap-2">
               {['Droit d\'accès', 'Droit de rectification', 'Droit à l\'effacement', 'Droit à la portabilité', 'Droit d\'opposition', 'Droit à la limitation'].map((droit) => (
                 <div key={droit} className="flex items-center gap-2 text-xs glass rounded-lg px-3 py-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#c41e3a] shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#B32C25] shrink-0" />
                   {droit}
                 </div>
               ))}
             </div>
             <p className="mt-4">
-              Pour exercer vos droits : <span className="text-[#c41e3a]">contact@upsilon-toulouse.fr</span>
+              Pour exercer vos droits : <span className="text-[#B32C25]">contact@upsilon-toulouse.fr</span>
             </p>
             <p className="mt-2">
-              Vous pouvez également introduire une réclamation auprès de la <strong className="text-[rgba(245,245,247,0.85)]">CNIL</strong> : <span className="text-[#c41e3a]">cnil.fr</span>
+              Vous pouvez également introduire une réclamation auprès de la <strong className="text-[rgba(245,245,247,0.85)]">CNIL</strong> : <span className="text-[#B32C25]">cnil.fr</span>
             </p>
           </section>
 

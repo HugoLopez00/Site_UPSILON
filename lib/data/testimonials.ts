@@ -1,4 +1,4 @@
-export interface Testimonial {
+﻿export interface Testimonial {
   id: string
   name: string
   role: string
@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
     rating: 5,
     avatar: '',
     initials: 'FD',
-    color: '#c41e3a',
+    color: '#B32C25',
     project: 'Application IoT Industrielle',
   },
   {

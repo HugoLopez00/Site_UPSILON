@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -14,7 +14,7 @@ export default function EquipePage() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-[#07070a] relative overflow-hidden">
         <div className="line-grid absolute inset-0 opacity-30" />
-        <div className="absolute top-1/4 right-1/3 w-[400px] h-[400px] bg-[#c41e3a] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 right-1/3 w-[400px] h-[400px] bg-[#B32C25] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 relative">
           <motion.div

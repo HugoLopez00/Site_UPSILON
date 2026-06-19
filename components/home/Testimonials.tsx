@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
@@ -67,7 +67,7 @@ export function Testimonials() {
                 {/* Project tag */}
                 {t.project && (
                   <div className="mb-5">
-                    <span className="text-[11px] px-2.5 py-1 rounded-full bg-[rgba(196,30,58,0.1)] border border-[rgba(196,30,58,0.2)] text-[#c41e3a] font-medium">
+                    <span className="text-[11px] px-2.5 py-1 rounded-full bg-[rgba(196,30,58,0.1)] border border-[rgba(196,30,58,0.2)] text-[#B32C25] font-medium">
                       Projet : {t.project}
                     </span>
                   </div>

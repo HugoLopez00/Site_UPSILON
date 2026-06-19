@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -51,7 +51,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="pt-32 pb-16 bg-[#07070a] relative overflow-hidden">
         <div className="line-grid absolute inset-0 opacity-30" />
-        <div className="absolute top-1/3 right-1/3 w-[400px] h-[300px] bg-[#c41e3a] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/3 right-1/3 w-[400px] h-[300px] bg-[#B32C25] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 relative">
           <motion.div
@@ -201,7 +201,7 @@ export default function ContactPage() {
                         className="flex items-start gap-3 group"
                       >
                         <div className="w-8 h-8 rounded-lg bg-[rgba(196,30,58,0.1)] border border-[rgba(196,30,58,0.2)] flex items-center justify-center shrink-0 mt-0.5">
-                          <Icon size={14} className="text-[#c41e3a]" />
+                          <Icon size={14} className="text-[#B32C25]" />
                         </div>
                         <div>
                           <p className="text-[11px] text-[rgba(245,245,247,0.4)] mb-0.5">{info.label}</p>
@@ -219,7 +219,7 @@ export default function ContactPage() {
               <div className="glass rounded-2xl overflow-hidden h-48 relative">
                 <div className="absolute inset-0 dot-grid opacity-30" />
                 <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                  <MapPin size={24} className="text-[#c41e3a]" />
+                  <MapPin size={24} className="text-[#B32C25]" />
                   <p className="text-xs text-[rgba(245,245,247,0.5)] text-center px-4">
                     Bât. Louis Lareng<br />118 Route de Narbonne<br />31062 Toulouse
                   </p>

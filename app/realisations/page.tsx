@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -21,7 +21,7 @@ export default function RealisationsPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-[#07070a] relative overflow-hidden">
         <div className="line-grid absolute inset-0 opacity-30" />
-        <div className="absolute bottom-0 left-1/3 w-[500px] h-[300px] bg-[#c41e3a] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 w-[500px] h-[300px] bg-[#B32C25] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 relative">
           <motion.div
@@ -63,7 +63,7 @@ export default function RealisationsPage() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   activeCategory === cat.id
-                    ? 'bg-[#c41e3a] text-white shadow-red-glow'
+                    ? 'bg-[#B32C25] text-white shadow-red-glow'
                     : 'glass text-[rgba(245,245,247,0.6)] hover:text-[#f5f5f7] hover:bg-white/[0.06]'
                 }`}
               >
@@ -140,7 +140,7 @@ export default function RealisationsPage() {
                       <div className="space-y-1.5 mb-5">
                         {project.results.slice(0, 2).map((r) => (
                           <div key={r} className="flex items-start gap-2 text-xs text-[rgba(245,245,247,0.55)]">
-                            <span className="text-[#c41e3a] mt-0.5">→</span>
+                            <span className="text-[#B32C25] mt-0.5">→</span>
                             {r}
                           </div>
                         ))}

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -14,7 +14,7 @@ export default function ServicesPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 bg-[#07070a] relative overflow-hidden">
         <div className="line-grid absolute inset-0 opacity-30" />
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[300px] bg-[#c41e3a] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/3 right-1/4 w-[500px] h-[300px] bg-[#B32C25] opacity-[0.04] blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1200px] mx-auto px-6 relative">
           <motion.div
@@ -84,7 +84,7 @@ export default function ServicesPage() {
                 <ul className="space-y-3 mb-8">
                   {service.benefits.map((b) => (
                     <li key={b} className="flex items-start gap-3">
-                      <CheckCircle size={16} className="text-[#c41e3a] mt-0.5 shrink-0" />
+                      <CheckCircle size={16} className="text-[#B32C25] mt-0.5 shrink-0" />
                       <span className="text-sm text-[rgba(245,245,247,0.65)]">{b}</span>
                     </li>
                   ))}
