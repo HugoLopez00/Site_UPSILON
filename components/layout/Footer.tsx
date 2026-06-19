@@ -39,10 +39,18 @@ export function Footer() {
           {/* Brand col */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 w-fit group mb-6">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#B32C25] to-[#8C2019] flex items-center justify-center text-white font-bold text-xl shadow-red-glow">
+              <div
+                className="w-9 h-9 rounded-xl flex items-center justify-center text-white font-black text-base shrink-0"
+                style={{
+                  background: 'linear-gradient(145deg, #B32C25, #8C2019)',
+                  boxShadow: '0 2px 12px rgba(179,44,37,0.35)',
+                }}
+              >
                 Υ
               </div>
-              <span className="font-bold text-xl tracking-tight text-[#f5f5f7]">UPSILON</span>
+              <span className="font-black text-[20px] tracking-[-0.05em] uppercase select-none">
+                <span style={{ color: '#B32C25' }}>UPS</span><span style={{ color: '#DC6F6C' }}>ILON</span>
+              </span>
             </Link>
             <p className="text-sm text-[rgba(245,245,247,0.5)] leading-relaxed max-w-xs mb-8">
               Junior-Entreprise de l&apos;Université de Toulouse. Prestations d&apos;ingénierie et de conseil

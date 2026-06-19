@@ -69,18 +69,25 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
           scrolled
-            ? 'glass border-b border-white/[0.06] py-3'
-            : 'bg-transparent py-5'
+            ? 'backdrop-blur-xl border-b border-white/[0.06] py-3'
+            : 'py-5'
         )}
+        style={{ background: scrolled ? 'rgba(5,5,8,0.86)' : 'rgba(5,5,8,0)' }}
       >
         <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#B32C25] to-[#8C2019] flex items-center justify-center text-white font-bold text-lg shadow-red-glow group-hover:shadow-[0_0_20px_rgba(196,30,58,0.6)] transition-shadow duration-300">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-black text-base shrink-0 transition-shadow duration-300"
+              style={{
+                background: 'linear-gradient(145deg, #B32C25, #8C2019)',
+                boxShadow: '0 2px 12px rgba(179,44,37,0.35)',
+              }}
+            >
               Υ
             </div>
-            <span className="font-bold text-lg tracking-tight text-[#f5f5f7]">
-              UPSILON
+            <span className="font-black text-[18px] tracking-[-0.05em] uppercase select-none">
+              <span style={{ color: '#B32C25' }}>UPS</span><span style={{ color: '#DC6F6C' }}>ILON</span>
             </span>
           </Link>
 
@@ -112,7 +119,12 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.97 }}
                         transition={{ duration: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 glass rounded-2xl p-2 shadow-[0_24px_64px_rgba(0,0,0,0.6)]"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 rounded-2xl p-2"
+                        style={{
+                          background: 'var(--bg-2)',
+                          border: '1px solid rgba(255,255,255,0.07)',
+                          boxShadow: '0 24px 64px rgba(0,0,0,0.6)',
+                        }}
                       >
                         {services.map((s) => (
                           <Link

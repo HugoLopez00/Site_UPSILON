@@ -3,6 +3,7 @@ import { Hero } from '@/components/home/Hero'
 import { Stats } from '@/components/home/Stats'
 import { ServicesOverview } from '@/components/home/ServicesOverview'
 import { Process } from '@/components/home/Process'
+import { Marquee } from '@/components/home/Marquee'
 import { Testimonials } from '@/components/home/Testimonials'
 import { Clients } from '@/components/home/Clients'
 import { HomeCTA } from '@/components/home/HomeCTA'
@@ -16,11 +17,12 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Clients />
       <Stats />
       <ServicesOverview />
       <Process />
+      <Marquee />
       <Testimonials />
+      <Clients />
       <HomeCTA />
     </>
   )

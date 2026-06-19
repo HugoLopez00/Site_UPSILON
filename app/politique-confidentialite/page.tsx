@@ -70,7 +70,7 @@ export default function PolitiqueConfidentialitePage() {
             <p className="mb-3">Conformément au RGPD, vous disposez des droits suivants :</p>
             <div className="grid sm:grid-cols-2 gap-2">
               {['Droit d\'accès', 'Droit de rectification', 'Droit à l\'effacement', 'Droit à la portabilité', 'Droit d\'opposition', 'Droit à la limitation'].map((droit) => (
-                <div key={droit} className="flex items-center gap-2 text-xs glass rounded-lg px-3 py-2">
+                <div key={droit} className="flex items-center gap-2 text-xs rounded-lg px-3 py-2" style={{ background: 'var(--bg-2)', border: '1px solid rgba(255,255,255,0.07)' }}>
                   <span className="w-1.5 h-1.5 rounded-full bg-[#B32C25] shrink-0" />
                   {droit}
                 </div>

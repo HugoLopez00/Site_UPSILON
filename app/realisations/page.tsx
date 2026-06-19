@@ -64,7 +64,7 @@ export default function RealisationsPage() {
                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 ${
                   activeCategory === cat.id
                     ? 'bg-[#B32C25] text-white shadow-red-glow'
-                    : 'glass text-[rgba(245,245,247,0.6)] hover:text-[#f5f5f7] hover:bg-white/[0.06]'
+                    : 'text-[rgba(245,245,247,0.6)] hover:text-[#f5f5f7] hover:bg-white/[0.06]'
                 }`}
               >
                 {cat.label}
