@@ -56,7 +56,7 @@ export default function ContactPage() {
                 animate={{ y: 0, skewY: 0 }}
                 transition={{ delay: 0.3 + i * 0.12, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
                 className="block font-black uppercase select-none"
-                style={{ fontSize: 'clamp(3rem, 12vw, 14rem)', lineHeight: 0.88, letterSpacing: '-0.04em', color: i === 1 ? 'var(--steel)' : 'var(--text)' }}
+                style={{ fontSize: 'clamp(2.5rem, 10.5vw, 10rem)', lineHeight: 0.88, letterSpacing: '-0.04em', color: i === 1 ? 'var(--steel)' : 'var(--text)' }}
               >
                 {word}
               </motion.span>
@@ -259,5 +259,6 @@ export default function ContactPage() {
     </>
   )
 }
+
 
 

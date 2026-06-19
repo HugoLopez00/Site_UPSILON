@@ -47,7 +47,7 @@ export default function AProposPage() {
                 animate={{ y: 0, skewY: 0 }}
                 transition={{ delay: 0.3 + i * 0.12, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
                 className="block font-black uppercase select-none"
-                style={{ fontSize: 'clamp(3rem, 10vw, 12rem)', lineHeight: 0.88, letterSpacing: '-0.04em', color: i === 1 ? 'var(--red)' : 'var(--text)' }}
+                style={{ fontSize: i === 0 ? 'clamp(2.5rem, 11vw, 10.5rem)' : 'clamp(2rem, 9vw, 8.5rem)', lineHeight: 0.88, letterSpacing: '-0.04em', color: i === 1 ? 'var(--red)' : 'var(--text)' }}
               >
                 {word}
               </motion.span>
